@@ -6,7 +6,7 @@ from setting import Config
 class Menu:
     def __init__(self, screen):
         self.screen = screen
-        self.background = pygame.image.load("./assets/images/mainbg.png")
+        self.background = pygame.image.load("./assets/images/mainbg2.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
         # for logo
         self.title_image = pygame.image.load("./assets/images/logo (1).png")
@@ -16,9 +16,9 @@ class Menu:
         # for buttons
         button_y_start = Config.height // 2 - 20
         button_spacing = 110
-        self.Play = ui.Button(screen, Config.width // 2, button_y_start, 300, 80, "Play")
-        self.Option = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "Option")
-        self.exit = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 300, 80, "Exit")
+        self.Play = ui.Button(screen, Config.width // 2, button_y_start, 200, 80, "Play")
+        self.Option = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 200, 80, "Option")
+        self.exit = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 200, 80, "Exit")
 
         self.running = True
         self.clock = pygame.time.Clock()
@@ -31,11 +31,9 @@ class Menu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.Play.get_rect().collidepoint(mouse_position):
-            print("Play screen")
-            return'play'
+             return'play'
         elif self.Option.get_rect().collidepoint(mouse_position):
-            print("Option screen")
-            return'option'
+               return'option'
         elif self.exit.get_rect().collidepoint(mouse_position):
             self.running = False
 

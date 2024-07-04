@@ -5,7 +5,7 @@ from setting import Config
 class PlayMenu:
     def __init__(self, screen):
         self.screen = screen
-        self.background = pygame.image.load("./assets/images/mainbg.png")
+        self.background = pygame.image.load("./assets/images/mainbg2.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
 
         # for logo
@@ -13,12 +13,11 @@ class PlayMenu:
         self.title_image = pygame.transform.smoothscale(self.title_image, (Config.width // 2.5, Config.height // 1.6))
         self.title_image_rect = self.title_image.get_rect(center=(Config.width // 2, Config.height // 4))
 
-
         button_y_start = Config.height // 2 - 20
         button_spacing = 110
-        self.vs_player = ui.Button(screen, Config.width // 2, button_y_start, 200, 80, "Vs Player")
-        self.vs_bot = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 200, 80, "Vs Bot")
-        self.back = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 200, 80, "Back")
+        self.vs_player = ui.Button(screen, Config.width // 2, button_y_start, 300, 80, "Vs Player")
+        self.vs_bot = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "Vs Bot")
+        self.back = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 300, 80, "Back")
 
         self.running = True
         self.clock = pygame.time.Clock()
@@ -31,9 +30,9 @@ class PlayMenu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.vs_player.get_rect().collidepoint(mouse_position):
-            print("Vs Player screen")
+            pass
         elif self.vs_bot.get_rect().collidepoint(mouse_position):
-            print("Vs Bot screen")
+            pass
         elif self.back.get_rect().collidepoint(mouse_position):
             return 'main'
 
