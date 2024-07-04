@@ -1,17 +1,27 @@
 import pygame
 import sys
 from setting import Config
-from menu import Menu
+from MainScreen.menu import Menu
+from MainScreen.playmenu import PlayMenu
+from MainScreen.optionmenu import OptionMenu
 
 def main():
     pygame.init()
     screen = pygame.display.set_mode(Config.resolution)
 
-    # Game loop
-    menu_screen = Menu(screen)
-    menu_screen.Run()
+    current_screen = 'main'
+    while current_screen != 'exit':
+        if current_screen == 'main':
+            menu = Menu(screen)
+        elif current_screen == 'play':
+            menu = PlayMenu(screen)
+        elif current_screen == 'option':
+            menu = OptionMenu(screen)
+        else:
+            break
 
-    # Quit Pygame
+        current_screen = menu.Run()
+
     pygame.quit()
     sys.exit()
 
