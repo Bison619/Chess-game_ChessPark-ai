@@ -1,6 +1,7 @@
 import pygame
 import ui
 from setting import Config
+from MainScreen.chess import Chess
 
 class PlayMenu:
     def __init__(self, screen):
@@ -21,6 +22,7 @@ class PlayMenu:
 
         self.running = True
         self.clock = pygame.time.Clock()
+        self.chess = Chess(screen)
 
     def DrawButtons(self):
         self.vs_player.Draw()
@@ -30,15 +32,24 @@ class PlayMenu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.vs_player.get_rect().collidepoint(mouse_position):
-            pass
+            self.chess.gameOver = False
+            self.chess.vsPlayer()
         elif self.vs_bot.get_rect().collidepoint(mouse_position):
             pass
         elif self.back.get_rect().collidepoint(mouse_position):
             return 'main'
 
+    def GetFrameRate(self):
+        return self.clock.get_fps()
+
     def Run(self):
         while self.running:
             self.clock.tick(Config.fps)
+            # update caption and frame rate
+            pygame.display.set_caption("Chess " + str(int(self.GetFrameRate())))
+            # display background image
+            self.screen.blit(self.background, (0, 0))
+            # handle Events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False

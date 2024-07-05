@@ -1,6 +1,7 @@
 import pygame
 import ui
 from setting import Config
+from MainScreen.chess import Chess
 
 
 class Menu:
@@ -22,6 +23,7 @@ class Menu:
 
         self.running = True
         self.clock = pygame.time.Clock()
+        self.chess = Chess(screen)
 
     def DrawButtons(self):
         self.Play.Draw()
