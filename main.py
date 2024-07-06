@@ -21,7 +21,6 @@ def main():
             break
 
         current_screen = menu.Run()
-
     pygame.quit()
     sys.exit()
 

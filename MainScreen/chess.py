@@ -10,7 +10,9 @@ class Chess:
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.gameOver = False
-        self.animateSpot = 1
+        self.animateSpot = 5
+        self.background = pygame.image.load("./assets/images/mainbg2blur.png")
+        self.background = pygame.transform.scale(self.background, Config.resolution)
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -19,7 +21,7 @@ class Chess:
         pygame.event.clear()
         while not self.gameOver:
             self.clock.tick(Config.fps)
-            self.screen.fill((0, 0, 0))
+            self.background = pygame.image.load("./assets/images/mainbg2blur.png")
             self.HandleEvents()
             self.Render()
             pygame.display.set_caption("Chess : VS Player " + str(int(self.GetFrameRate())))
@@ -53,28 +55,34 @@ class Chess:
 
     def DrawChessBoard(self):
         if self.animateSpot < Config.spotSize:
-            self.animateSpot += 2
+            self.animateSpot += 5
+
         for i in range(Config.boardSize):
             for j in range(Config.boardSize):
                 x = i * Config.spotSize + Config.horizontal_offset
-                y = j * Config.spotSize + Config.top_offset // 2
+                y = j * Config.spotSize + Config.top_offset
+
                 if (i + j) % 2 == 0:
-                    pygame.draw.rect(self.screen, Config.themes[Config.themeIndex]["light"], [x, y, self.animateSpot, self.animateSpot])
+                    color = Config.themes[Config.themeIndex]["light"]
                 else:
-                    pygame.draw.rect(self.screen, Config.themes[Config.themeIndex]["dark"], [x, y, self.animateSpot, self.animateSpot])
+                    color = Config.themes[Config.themeIndex]["dark"]
+
+                pygame.draw.rect(self.screen, color, [x, y, self.animateSpot, self.animateSpot])
 
     def DrawChessCoordinate(self):
         for i in range(Config.boardSize):
-            _x = 0.05 * Config.spotSize + Config.horizontal_offset
-            _y = 0.05 * Config.spotSize + Config.top_offset + i * Config.spotSize
-            color = Config.themes[Config.themeIndex]['dark'] if i % 2 == 0 else Config.themes[Config.themeIndex]['light']
+            # Row numbers on the left side
+            x = Config.horizontal_offset
+            y = i * Config.spotSize + Config.top_offset + Config.spotSize - 20
+            color = Config.themes[Config.themeIndex]['dark'] if (i % 2) == 0 else Config.themes[Config.themeIndex]['light']
+            fontRenderer = Config.CoordFont.render(str(Config.boardSize - i), True, color)
+            self.screen.blit(fontRenderer, (x, y))
 
-            fontRenderer = Config.CoordFont.render(str(8-i), True, color)
-            self.screen.blit(fontRenderer, (_x, _y))
+            # Column letters at the bottom
+            x = i * Config.spotSize + Config.horizontal_offset + 90
+            y = Config.top_offset + Config.board_display_size - 15
+            color = Config.themes[Config.themeIndex]['light'] if (i % 2) == 0 else Config.themes[Config.themeIndex]['dark']
+            fontRenderer = Config.CoordFont.render(chr(ord("a") + i), True, color)
+            self.screen.blit(fontRenderer, (x, y))
 
-            _x = 0.9 * Config.spotSize + Config.horizontal_offset + i * Config.spotSize
-            _y = (Config.boardSize - 1) * Config.spotSize + Config.top_offset + Config.spotSize * 0.75
-            color = Config.themes[Config.themeIndex]['light'] if i % 2 == 0 else Config.themes[Config.themeIndex]['dark']
 
-            fontRenderer = Config.CoordFont.render(chr(ord("a")+ i), True, color)
-            self.screen.blit(fontRenderer, (_x, _y))

@@ -6,7 +6,7 @@ from MainScreen.chess import Chess
 class PlayMenu:
     def __init__(self, screen):
         self.screen = screen
-        self.background = pygame.image.load("./assets/images/mainbg2.png")
+        self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
 
         # for logo
