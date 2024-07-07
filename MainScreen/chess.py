@@ -2,8 +2,10 @@ import pygame
 import sys
 import time
 
-import ui
 from setting import Config
+from utils import GetSprite
+from board import Board
+import ui
 
 class Chess:
     def __init__(self, screen):
@@ -11,6 +13,7 @@ class Chess:
         self.clock = pygame.time.Clock()
         self.gameOver = False
         self.animateSpot = 5
+        self.board = Board()
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
 
@@ -50,7 +53,7 @@ class Chess:
     def Render(self):
         self.DrawChessBoard()
         if self.animateSpot >= Config.spotSize:
-            pass
+            self.DrawPieces()
         self.DrawChessCoordinate()
 
     def DrawChessBoard(self):
@@ -85,4 +88,13 @@ class Chess:
             fontRenderer = Config.CoordFont.render(chr(ord("a") + i), True, color)
             self.screen.blit(fontRenderer, (x, y))
 
-
+    def DrawPieces(self):
+        # Loop through the board grid and draw each piece on the screen
+        for x in range(Config.boardSize):
+            for y in range(Config.boardSize):
+                x_pos = x * Config.spotSize + Config.horizontal_offset
+                y_pos = y * Config.spotSize + Config.top_offset
+                piece = self.board.grid[x][y]
+                if piece is not None:
+                    sprite = GetSprite(piece)
+                    self.screen.blit(sprite, (x_pos, y_pos))
