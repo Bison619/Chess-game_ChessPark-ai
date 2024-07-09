@@ -203,7 +203,7 @@ class Chess:
                     bottomY = (i + 4) * Config.spotSize - 1
                     pygame.draw.rect(self.screen, (0, 0, 0), [x, bottomY, Config.spotSize , 2])
 
-
+    # for the highlight of the pieces legal moves in the board and captures
     def DrawHighlight(self):
         # highlight selected piece
         if self.selectedPiece != None:
