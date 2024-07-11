@@ -1,4 +1,5 @@
 import pygame
+from setting import sounds
 
 class TextUI:
     def __init__(self, screen, text, x, y, fontSize, color):
@@ -44,6 +45,8 @@ class Button:
         if self.get_rect().collidepoint(mouse_position):
             self.tempcolor = self.hoverColor
             self.counter += 1
+            if self.counter == 2:
+                sounds.castle_sound.play()
         else:
             self.counter = 0
             self.tempcolor = self.backgroundColor

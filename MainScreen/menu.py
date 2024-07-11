@@ -1,8 +1,11 @@
-import pygame
+import pygame, os
 import ui
-from setting import Config
+from setting import Config,sounds
 from MainScreen.chess import Chess
-
+# for back-ground music
+pygame.mixer.music.load(os.path.join('assets/sounds/bg space music.mp3'))
+pygame.mixer.music.set_volume(0.2)
+pygame.mixer.music.play(-1)
 
 class Menu:
     def __init__(self, screen):
@@ -21,6 +24,7 @@ class Menu:
         self.Option = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 200, 80, "Option")
         self.exit = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 200, 80, "Exit")
 
+
         self.running = True
         self.clock = pygame.time.Clock()
         self.chess = Chess(screen)
@@ -33,10 +37,13 @@ class Menu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.Play.get_rect().collidepoint(mouse_position):
-             return'play'
+            sounds.button_sound.play()
+            return'play'
         elif self.Option.get_rect().collidepoint(mouse_position):
-               return'option'
+            sounds.button_sound.play()
+            return'option'
         elif self.exit.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
             self.running = False
 
     def GetFrameRate(self):

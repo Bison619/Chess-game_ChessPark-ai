@@ -1,6 +1,6 @@
 import pygame
 from pieces import *
-from setting import Config
+from setting import Config, sounds
 from tools import Position, OnBoard
 import math
 from Fen import *
@@ -193,6 +193,7 @@ class Board:
             rook.previousMove = self.moveIndex - 1
             self.grid[rook.position.x][rook.position.y] = rook
             self.historic[-1][2] = king.code + " C"
+            sounds.castle_sound.play()
 
     def PromotePawn(self, pawn, choice):
         if choice == 0:

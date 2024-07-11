@@ -1,6 +1,6 @@
 import pygame
 import ui
-from setting import Config
+from setting import Config,sounds
 
 class OptionMenu:
     def __init__(self, screen):
@@ -30,6 +30,7 @@ class OptionMenu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.back.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
             return 'main'
 
     def Run(self):

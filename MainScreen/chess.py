@@ -2,7 +2,7 @@ import pygame
 import sys
 import time
 
-from setting import Config
+from setting import Config, sounds
 from tools import Position, OnBoard
 from utils import GetSprite, bh, oh, ch
 from board import Board
@@ -23,6 +23,7 @@ class Chess:
         self.board = Board()
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
+
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -78,10 +79,12 @@ class Chess:
             if self.selectedOrigin != self.AdjustedMouse:
                 if self.AdjustedMouse in self.selectedPieceCaptures:
                     self.board.Move(self.selectedPiece, self.AdjustedMouse)
-                    # play sounds)
+                    # play sounds
+                    sounds.capture_sound.play()
                 elif self.AdjustedMouse in self.selectedPieceMoves :
                     self.board.Move(self.selectedPiece, self.AdjustedMouse)
                     # play sound
+                    sounds.move_sound.play()
                 self.ReleasePiece()
             elif self.CanBeReleased:
                 self.ReleasePiece()

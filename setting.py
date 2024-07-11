@@ -28,4 +28,19 @@ class setting:
             {"dark": (119, 154, 88), "light": (234, 235, 200), "outline": (0, 0, 0)},
         ]
 
+class Sound:
+    def __init__(self):
+        self.capture_sound = pygame.mixer.Sound("./assets/sounds/capture.mp3")
+        self.castle_sound = pygame.mixer.Sound("./assets/sounds/castle.mp3")
+        self.check_sound = pygame.mixer.Sound("./assets/sounds/Check.mp3")
+        self.button_sound = pygame.mixer.Sound("./assets/sounds/button-sound.mp3")
+        self.checkmatewin_sound = pygame.mixer.Sound("./assets/sounds/Checkmate_Win.mp3")
+        self.checkmatelose_sound = pygame.mixer.Sound("./assets/sounds/Checkmate_Lose.mp3")
+        self.game_over_sound = pygame.mixer.Sound("./assets/sounds/game-end.mp3")
+        self.game_start_sound = pygame.mixer.Sound("./assets/sounds/game-start.mp3")
+        self.move_sound = pygame.mixer.Sound("./assets/sounds/move-self.mp3")
+        # self.stalemate_sound = pygame.mixer.Sound("./assets/sounds/stalemate_sound.mp3")
+        self.promote_sound = pygame.mixer.Sound("./assets/sounds/promote.mp3")
+
 Config = setting()
+sounds = Sound()

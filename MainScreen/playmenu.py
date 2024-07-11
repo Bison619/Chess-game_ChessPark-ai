@@ -1,6 +1,6 @@
 import pygame
 import ui
-from setting import Config
+from setting import Config,sounds
 from MainScreen.chess import Chess
 
 class PlayMenu:
@@ -32,11 +32,15 @@ class PlayMenu:
     def HandleClick(self):
         mouse_position = pygame.mouse.get_pos()
         if self.vs_player.get_rect().collidepoint(mouse_position):
+            pygame.mixer.music.stop()
+            sounds.button_sound.play()
             self.chess.gameOver = False
             self.chess.vsPlayer()
         elif self.vs_bot.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
             pass
         elif self.back.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
             return 'main'
 
     def GetFrameRate(self):
