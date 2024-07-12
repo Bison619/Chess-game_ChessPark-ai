@@ -2,6 +2,8 @@ import pygame
 from setting import Config
 
 highlight_size = (Config.spotSize + 5, Config.spotSize + 5)
+move_highlight_size = (Config.spotSize - 50, Config.spotSize - 50)
+cap_highlight_size = (Config.spotSize + 20, Config.spotSize + 20)
 
 white_highlight = pygame.image.load("./assets/images/highlighter.png")
 blue_highlight = pygame.image.load("./assets/images/bluehighlighter.png")
@@ -13,8 +15,8 @@ outline_highlight = pygame.image.load("./assets/images/circleOutline.png")
 wh = pygame.transform.smoothscale(white_highlight, highlight_size)
 bh = pygame.transform.smoothscale(blue_highlight, highlight_size)
 gh = pygame.transform.smoothscale(green_highlight, highlight_size)
-rh = pygame.transform.smoothscale(red_highlight, highlight_size)
-ch = pygame.transform.smoothscale(circle_highlight, highlight_size)
+rh = pygame.transform.smoothscale(red_highlight, cap_highlight_size)
+ch = pygame.transform.smoothscale(circle_highlight, move_highlight_size)
 oh = pygame.transform.smoothscale(outline_highlight, highlight_size)
 
 

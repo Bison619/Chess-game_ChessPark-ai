@@ -2,6 +2,7 @@ import pygame
 import ui
 from setting import Config,sounds
 from MainScreen.chess import Chess
+from MainScreen.fadeeffect import fade_out
 
 class PlayMenu:
     def __init__(self, screen):
@@ -29,7 +30,7 @@ class PlayMenu:
         self.vs_bot.Draw()
         self.back.Draw()
 
-    def HandleClick(self):
+    def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
         if self.vs_player.get_rect().collidepoint(mouse_position):
             pygame.mixer.music.stop()
@@ -41,6 +42,7 @@ class PlayMenu:
             pass
         elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
+            fade_out(screen)
             return 'main'
 
     def GetFrameRate(self):
@@ -61,7 +63,7 @@ class PlayMenu:
                     if event.key == pygame.K_ESCAPE:
                         self.running = False
                 elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-                    next_screen = self.HandleClick()
+                    next_screen = self.HandleClick(self.screen)
                     if next_screen:
                         return next_screen
 

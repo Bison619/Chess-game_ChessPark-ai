@@ -1,7 +1,7 @@
 import pygame
 import sys
 from setting import Config
-from MainScreen.menu import Menu
+from MainScreen.menu  import Menu
 from MainScreen.playmenu import PlayMenu
 from MainScreen.optionmenu import OptionMenu
 

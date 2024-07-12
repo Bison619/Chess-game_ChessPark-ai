@@ -4,7 +4,7 @@ import time
 
 from setting import Config, sounds
 from tools import Position, OnBoard
-from utils import GetSprite, bh, oh, ch
+from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
 import ui
 
@@ -175,35 +175,49 @@ class Chess:
             self.screen.blit(fontRenderer, (x, y))
 
     def DrawPieces(self):
+        # draw previous position
+        nPosition, oldPosition = self.board.RecentMovePositions()
+        if oldPosition and nPosition:
+            x1 = oldPosition.x * Config.spotSize + Config.horizontal_offset
+            y1 = oldPosition.y * Config.spotSize + Config.top_offset // 2 + 25
+            x2 = nPosition.x * Config.spotSize + Config.horizontal_offset
+            y2 = nPosition.y * Config.spotSize + Config.top_offset // 2 + 25
+            pygame.draw.rect(self.screen, (252, 252, 129), [x1, y1, Config.spotSize, Config.spotSize])
+            pygame.draw.rect(self.screen, (255, 255, 144), [x2, y2, Config.spotSize, Config.spotSize])
         # Loop through the board grid and draw each piece on the screen
         for x in range(Config.boardSize):
             for y in range(Config.boardSize):
                 x_pos = x * Config.spotSize + Config.horizontal_offset
                 y_pos = y * Config.spotSize + Config.top_offset
+
                 piece = self.board.grid[x][y]
                 if piece is not None:
                     sprite = GetSprite(piece)
                     self.screen.blit(sprite, (x_pos, y_pos))
+                elif self.board.grid[x][y] is not None:
+                    y_pos += Config.spotSize // 2  # Adjust y_pos only if there is no piece
+                    self.screen.blit(self.board.grid[x][y].sprite, (x_pos, y_pos))
+
 
     def RenderPromoteWindow(self):
         if self.board.pieceToPromote:
             if self.board.pieceToPromote.color == 0:
                 x = self.board.pieceToPromote.position.x * Config.spotSize + Config.horizontal_offset
-                y = self.board.pieceToPromote.position.y * Config.spotSize + Config.top_offset // 2
+                y = self.board.pieceToPromote.position.y * Config.spotSize + Config.top_offset // 2 + 25
                 pygame.draw.rect(self.screen, (200, 200, 200), [x, y, Config.spotSize , Config.spotSize * 4])
                 for i in range(4):
                     piece = self.board.whitePromotions[i]
-                    self.screen.blit(piece.sprite, (x, i * Config.spotSize + Config.top_offset //2 ))
-                    bottomY = i * Config.spotSize - 1
+                    self.screen.blit(piece.sprite, (x, i * Config.spotSize + Config.top_offset //2 + 20 ))
+                    bottomY = i * Config.spotSize + 50
                     pygame.draw.rect(self.screen, (0, 0, 0), [x, bottomY, Config.spotSize , 2])
             else:
                 x = self.board.pieceToPromote.position.x * Config.spotSize + Config.horizontal_offset
-                y = (self.board.pieceToPromote.position.y - 3) * Config.spotSize + Config.top_offset // 2
+                y = (self.board.pieceToPromote.position.y - 3) * Config.spotSize + Config.top_offset // 2 + 25
                 pygame.draw.rect(self.screen, (200, 200, 200), [x, y, Config.spotSize , Config.spotSize * 4])
                 for i in range(4):
                     piece = self.board.blackPromotions[i]
-                    self.screen.blit(piece.sprite, (x, (i+4) * Config.spotSize + Config.top_offset //2 ))
-                    bottomY = (i + 4) * Config.spotSize - 1
+                    self.screen.blit(piece.sprite, (x, (i+4) * Config.spotSize + Config.top_offset //2 + 20 ))
+                    bottomY = (i + 4) * Config.spotSize - 1 + 50
                     pygame.draw.rect(self.screen, (0, 0, 0), [x, bottomY, Config.spotSize , 2])
 
     # for the highlight of the pieces legal moves in the board and captures
@@ -222,15 +236,15 @@ class Chess:
             for move in self.selectedPieceMoves:
                 x = move.x * Config.spotSize + Config.horizontal_offset
                 y = move.y * Config.spotSize + Config.top_offset // 2 + 25
-
-                pygame.draw.rect(self.screen, (40, 130, 210), [x, y, Config.spotSize, Config.spotSize], Config.highlightOutline)
+                self.screen.blit(ch, (x + 25 , y + 25 , Config.spotSize, Config.spotSize))
+                # pygame.draw.rect(self.screen, (40, 130, 210), [x, y, Config.spotSize, Config.spotSize], Config.highlightOutline)
 
         # draw selected piece possible captures
         if self.selectedPiece and self.selectedPieceCaptures:
             for capturing in self.selectedPieceCaptures:
                 x = capturing.x * Config.spotSize + Config.horizontal_offset
                 y = capturing.y * Config.spotSize + Config.top_offset // 2 + 25
-                self.screen.blit(ch, (x, y))
+                self.screen.blit(rh, (x - 10, y - 10))
 
                 # pygame.draw.rect(self.screen, (210, 211, 190), [x, y, Config.spotSize, Config.spotSize], Config.highlightOutline)
 

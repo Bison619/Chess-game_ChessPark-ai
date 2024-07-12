@@ -1,6 +1,7 @@
 import pygame
 import ui
 from setting import Config,sounds
+from MainScreen.fadeeffect import fade_out
 
 class OptionMenu:
     def __init__(self, screen):
@@ -27,10 +28,11 @@ class OptionMenu:
         self.option2.Draw()
         self.back.Draw()
 
-    def HandleClick(self):
+    def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
         if self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
+            fade_out(screen)
             return 'main'
 
     def Run(self):
@@ -43,7 +45,7 @@ class OptionMenu:
                     if event.key == pygame.K_ESCAPE:
                         self.running = False
                 elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-                    next_screen = self.HandleClick()
+                    next_screen = self.HandleClick(self.screen)
                     if next_screen:
                         return next_screen
 

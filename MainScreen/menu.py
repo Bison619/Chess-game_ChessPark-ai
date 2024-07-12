@@ -2,10 +2,12 @@ import pygame, os
 import ui
 from setting import Config,sounds
 from MainScreen.chess import Chess
+from MainScreen.fadeeffect import fade_in,fade_out
 # for back-ground music
 pygame.mixer.music.load(os.path.join('assets/sounds/bg space music.mp3'))
-pygame.mixer.music.set_volume(0.2)
+pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
+
 
 class Menu:
     def __init__(self, screen):
@@ -34,17 +36,22 @@ class Menu:
         self.Option.Draw()
         self.exit.Draw()
 
-    def HandleClick(self):
+    def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
         if self.Play.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
+            fade_out(screen)
+            fade_in(screen)
             return'play'
         elif self.Option.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
+            fade_out(screen)
+            fade_in(screen)
             return'option'
         elif self.exit.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             self.running = False
+            fade_out(screen)
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -62,7 +69,7 @@ class Menu:
                 elif event.type == pygame.MOUSEBUTTONUP:
                     # left mouse click
                     if event.button == 1:
-                        next_screen = self.HandleClick()
+                        next_screen = self.HandleClick(self.screen)
                         if next_screen:
                             return next_screen
 
