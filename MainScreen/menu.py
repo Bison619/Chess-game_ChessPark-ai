@@ -22,10 +22,10 @@ class Menu:
         # for buttons
         button_y_start = Config.height // 2 - 20
         button_spacing = 110
-        self.Play = ui.Button(screen, Config.width // 2, button_y_start, 200, 80, "Play")
-        self.Option = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 200, 80, "Option")
-        self.exit = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 200, 80, "Exit")
-
+        self.Play = ui.Button(screen, Config.width // 2, button_y_start, 200, 80, "New Game")
+        self.load = ui.Button(screen, Config.width // 2, button_y_start +  button_spacing, 200, 80, "Load Game")
+        self.Option = ui.Button(screen, Config.width // 2, button_y_start + 2 *  button_spacing, 200, 80, "Option")
+        self.exit = ui.Button(screen, Config.width // 2, button_y_start + 3 * button_spacing, 200, 80, "Exit")
 
         self.running = True
         self.clock = pygame.time.Clock()
@@ -35,6 +35,7 @@ class Menu:
         self.Play.Draw()
         self.Option.Draw()
         self.exit.Draw()
+        self.load.Draw()
 
     def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
