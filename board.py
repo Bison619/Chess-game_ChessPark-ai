@@ -31,6 +31,7 @@ class Board:
 
         self.whitePromotions = [Queen(Position(0, 0), 0), Bishop(Position(0, 1), 0), Knight(Position(0, 2), 0), Rook(Position(0, 3), 0)]
         self.blackPromotions = [Rook(Position(0, 7), 1), Knight(Position(0, 6), 1), Bishop(Position(0, 5), 1), Queen(Position(0, 4), 1)]
+        self.moveLog = []
 
     def Forfeit(self):
         # resign
@@ -104,6 +105,19 @@ class Board:
         self.moveIndex += 1
         self.checkBlackKing = False
         self.checkWhiteKing = False
+        # Add the move to the move log
+        piece_notation = {
+            "Pawn": "P",
+            "Knight": "Kn",
+            "Bishop": "B",
+            "Rook": "R",
+            "Queen": "Q",
+            "King": "K"
+        }
+
+        piece_name = piece.__class__.__name__
+        move = f"{piece_notation.get(piece_name, '')}{chr(position.x + 97)}{8 - position.y}"
+        self.moveLog.append(move)
 
     def VerifyMove(self, piece, move, isAI):
         # verify the move by going through all the possible outcomes

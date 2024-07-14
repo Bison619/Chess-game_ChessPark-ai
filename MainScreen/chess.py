@@ -23,6 +23,7 @@ class Chess:
         self.board = Board()
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
+        self.moveLogFont = pygame.font.SysFont("Verdana", 18)
 
 
     def GetFrameRate(self):
@@ -141,6 +142,7 @@ class Chess:
         if self.animateSpot >= Config.spotSize:
             self.DrawPieces()
         self.DrawHighlight()
+        self.drawMoveLog()
 
     def DrawChessBoard(self):
         if self.animateSpot < Config.spotSize:
@@ -280,3 +282,21 @@ class Chess:
             self.DrawChessCoordinate()
 
         self.RenderPromoteWindow()
+
+
+    def drawMoveLog(self):
+        logX = Config.board_display_size + Config.horizontal_offset + 20
+        logY = Config.top_offset
+        logWidth = Config.resolution[0] - logX - 50
+        moveTexts = self.board.moveLog
+        movesPerRow = 6
+        corner_radius = 10
+
+        logRect = pygame.Rect(logX, logY, logWidth, 500)
+        pygame.draw.rect(self.screen, (204, 204, 204), logRect, border_radius=corner_radius)
+
+        for i, moveText in enumerate(moveTexts):
+            moveTextSurface = self.moveLogFont.render(moveText, True, (0, 0, 0))
+            moveX = logX + (i % movesPerRow) * (logWidth // movesPerRow)
+            moveY = logY + (i // movesPerRow) * 20
+            self.screen.blit(moveTextSurface, (moveX, moveY))
