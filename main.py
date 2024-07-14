@@ -4,6 +4,7 @@ from setting import Config
 from MainScreen.menu  import Menu
 from MainScreen.playmenu import PlayMenu
 from MainScreen.optionmenu import OptionMenu
+from MainScreen.loadmenu import LoadMenu
 
 def main():
     pygame.init()
@@ -15,6 +16,8 @@ def main():
             menu = Menu(screen)
         elif current_screen == 'play':
             menu = PlayMenu(screen)
+        elif current_screen == 'load':
+            menu = LoadMenu(screen)
         elif current_screen == 'option':
             menu = OptionMenu(screen)
         else:

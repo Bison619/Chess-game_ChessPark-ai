@@ -1,9 +1,10 @@
 import pygame
 import ui
 from setting import Config,sounds
+from MainScreen.chess import Chess
 from MainScreen.fadeeffect import fade_out
 
-class OptionMenu:
+class LoadMenu:
     def __init__(self, screen):
         self.screen = screen
         self.background = pygame.image.load("./assets/images/mainbg2.png")
@@ -14,30 +15,52 @@ class OptionMenu:
         self.title_image = pygame.transform.smoothscale(self.title_image, (Config.width // 2.5, Config.height // 1.6))
         self.title_image_rect = self.title_image.get_rect(center=(Config.width // 2, Config.height // 4))
 
-        button_y_start = Config.height // 2 -20
+        button_y_start = Config.height // 2 - 20
         button_spacing = 110
-        self.option1 = ui.Button(screen, Config.width // 2, button_y_start, 300, 80, "option1")
-        self.option2 = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "option2")
-        self.back = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 300, 80, "Back")
+        self.Save1 = ui.Button(screen, Config.width // 2, button_y_start, 300, 80, "Save Slot 1")
+        self.Save2 = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "Save Slot 2")
+        self.Save3 = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 300, 80, "Save Slot 3")
+        self.back = ui.Button(screen, Config.width // 2, button_y_start + 3 * button_spacing, 300, 80, "Back")
 
         self.running = True
         self.clock = pygame.time.Clock()
+        self.chess = Chess(screen)
 
     def DrawButtons(self):
-        self.option1.Draw()
-        self.option2.Draw()
+        self.Save1.Draw()
+        self.Save2.Draw()
+        self.Save3.Draw()
         self.back.Draw()
 
     def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
-        if self.back.get_rect().collidepoint(mouse_position):
+        if self.Save1.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+
+        elif self.Save2.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            pass
+
+        elif self.Save3.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            pass
+
+        elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
             return 'main'
 
+    def GetFrameRate(self):
+        return self.clock.get_fps()
+
     def Run(self):
         while self.running:
             self.clock.tick(Config.fps)
+            # update caption and frame rate
+            pygame.display.set_caption("Chess " + str(int(self.GetFrameRate())))
+            # display background image
+            self.screen.blit(self.background, (0, 0))
+            # handle Events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False

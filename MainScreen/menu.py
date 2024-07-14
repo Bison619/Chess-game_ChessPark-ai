@@ -44,6 +44,11 @@ class Menu:
             fade_out(screen)
             fade_in(screen)
             return'play'
+        elif self.load.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            fade_out(screen)
+            fade_in(screen)
+            return'load'
         elif self.Option.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
