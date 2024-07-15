@@ -1,4 +1,5 @@
 import pygame
+import random
 from pieces import *
 from setting import Config, sounds
 from tools import Position, OnBoard
@@ -7,7 +8,8 @@ from Fen import *
 
 class Board:
     def __init__(self):
-        # 0 -> white , 1 -> Black
+        # # 0 -> white , 1 -> Black
+        # self.player = random.choice([0, 1])
         self.player = 0
         self.historic = []
         self.moveIndex = 1
@@ -32,6 +34,7 @@ class Board:
         self.whitePromotions = [Queen(Position(0, 0), 0), Bishop(Position(0, 1), 0), Knight(Position(0, 2), 0), Rook(Position(0, 3), 0)]
         self.blackPromotions = [Rook(Position(0, 7), 1), Knight(Position(0, 6), 1), Bishop(Position(0, 5), 1), Queen(Position(0, 4), 1)]
         self.moveLog = []
+
 
     def Forfeit(self):
         # resign
@@ -96,8 +99,17 @@ class Board:
 
     def MovePiece(self, piece, position):
         position = position.GetCopy()
-        self.grid[piece.position.x][piece.position.y] = None
         old_position = piece.position.GetCopy()
+        captured_piece = self.grid[position.x][position.y]
+
+            # If there is a captured piece, add it to the respective list
+        if captured_piece:
+            if captured_piece.color == 0:
+                self.captured_white_pieces.append(captured_piece)
+            else:
+                self.captured_black_pieces.append(captured_piece)
+
+        self.grid[piece.position.x][piece.position.y] = None
         piece.updatePosition(position)
         self.grid[position.x][position.y] = piece
         self.historic.append([self.moveIndex, piece.color, piece.code, old_position, piece.position, piece])
@@ -116,7 +128,7 @@ class Board:
         }
 
         piece_name = piece.__class__.__name__
-        move = f"{piece_notation.get(piece_name, '')}{chr(position.x + 97)}{8 - position.y}"
+        move = f"{piece_notation.get(piece_name, '')}{chr(position.x + 97)}{8 - position.y}{','}"
         self.moveLog.append(move)
 
     def VerifyMove(self, piece, move, isAI):
@@ -249,9 +261,11 @@ class Board:
                     if king.position in captures:
                         if self.player == 1:
                             self.checkBlackKing = True
+                            sounds.check_sound.play()
                             return
                         else:
                             self.checkWhiteKing = True
+                            sounds.check_sound.play()
                             return
 
     def IsCheckmate(self):
