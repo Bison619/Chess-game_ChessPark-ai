@@ -7,6 +7,7 @@ from tools import Position, OnBoard
 from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
 from ui import Button
+import ui
 
 class Chess:
     def __init__(self, screen):
@@ -22,6 +23,12 @@ class Chess:
         self.draggedPiece = None
         self.CanBeReleased = False
         self.AdjustedMouse = Position(0, 0)
+        self.gameOverBackground = pygame.image.load("./assets/images/mainbg2blur.png")
+        self.gameOverBackground = pygame.transform.smoothscale(self.gameOverBackground, Config.resolution)
+        self.gameOverHeader = ui.TextUI(self.screen, "GAME OVER", Config.width//2, Config.height//6, 80, (255, 255, 255))
+        self.gameOverHeader.centered = True
+        self.winnerText = ui.TextUI(self.screen, "White Won the game", Config.width//2, Config.height//2, 180, (190, 255, 180))
+        self.winnerText.centered = True
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
@@ -39,7 +46,7 @@ class Chess:
             self.display()
             if self.animateSpot >= Config.spotSize:
                 self.HandleEvents()
-            pass
+            self.IsGameOver()
 
     def display(self):
         self.Render()
@@ -128,6 +135,12 @@ class Chess:
         y = (y - Config.top_offset//2) // Config.spotSize
         self.AdjustedMouse = Position(x, y)
 
+    def IsGameOver(self):
+        if self.board.winner != None:
+            self.gameOver = True
+            # print("the game is over")
+            self.display()
+            self.gameOverWindow()
 
     def ReleasePiece(self):
         self.selectedPiece = None
@@ -322,3 +335,32 @@ class Chess:
         save_button = Button(self.screen, logX + logWidth // 2, logY + button_height // 2, logWidth, button_height, button_text)
         save_button.Draw()
 
+    def gameOverWindow(self):
+        if self.board.winner >= 0:
+            sounds.checkmatewin_sound.play()
+        else:
+            sounds.checkmatelose_sound.play()
+        time.sleep(2)
+        self.screen.blit(self.gameOverBackground, (0, 0))
+        self.gameOverHeader.Draw()
+        if self.board.winner  == 0:
+            self.winnerText.text = "White Won"
+
+            king_image = self.board.WhiteKing.sprite
+            scaled_king_image = pygame.transform.scale(king_image, (king_image.get_width() + 20, king_image.get_height() + 20))
+            self.screen.blit(scaled_king_image, (Config.width // 2 - Config.spotSize // 2, Config.height // 3 - 50))
+
+        elif self.board.winner == 1:
+            self.winnerText.text = "Black Won"
+            king_image = self.board.BlackKing.sprite
+            scaled_king_image = pygame.transform.scale(king_image, (king_image.get_width() + 20, king_image.get_height() + 20))
+            self.screen.blit(scaled_king_image, (Config.width // 2 - Config.spotSize // 2, Config.height // 3 - 50))
+        else:
+            self.winnerText.text = "DRAW"
+
+        self.gameOverHeader.Draw()
+        self.winnerText.Draw()
+        pygame.display.update()
+        time.sleep(30)
+        self.board = Board()
+        self.animateSpot = 1
