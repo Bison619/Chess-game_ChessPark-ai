@@ -34,6 +34,8 @@ class Board:
         self.whitePromotions = [Queen(Position(0, 0), 0), Bishop(Position(0, 1), 0), Knight(Position(0, 2), 0), Rook(Position(0, 3), 0)]
         self.blackPromotions = [Rook(Position(0, 7), 1), Knight(Position(0, 6), 1), Bishop(Position(0, 5), 1), Queen(Position(0, 4), 1)]
         self.moveLog = []
+        self.captured_white_pieces = []
+        self.captured_black_pieces = []
 
 
     def Forfeit(self):
@@ -100,16 +102,7 @@ class Board:
     def MovePiece(self, piece, position):
         position = position.GetCopy()
         old_position = piece.position.GetCopy()
-        captured_piece = self.grid[position.x][position.y]
-
-            # If there is a captured piece, add it to the respective list
-        if captured_piece:
-            if captured_piece.color == 0:
-                self.captured_white_pieces.append(captured_piece)
-            else:
-                self.captured_black_pieces.append(captured_piece)
-
-        self.grid[piece.position.x][piece.position.y] = None
+        self.grid[old_position.x][old_position.y] = None
         piece.updatePosition(position)
         self.grid[position.x][position.y] = piece
         self.historic.append([self.moveIndex, piece.color, piece.code, old_position, piece.position, piece])

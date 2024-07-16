@@ -12,8 +12,8 @@ class Chess:
     def __init__(self, screen):
         self.screen = screen
         self.clock = pygame.time.Clock()
-        self.board = Board()
         self.piece_size = 40
+        self.board = Board()
         self.gameOver = False
         self.animateSpot = 5
         self.selectedPiece = None
@@ -25,24 +25,6 @@ class Chess:
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
-        self.captured_white_pieces = []
-        self.captured_black_pieces = []
-
-    def load_images(self):
-        self.images = {
-            'white_pawn': pygame.transform.scale(pygame.image.load("./assets/images/white_pawn.png"), (self.piece_size, self.piece_size)),
-            'white_bishop': pygame.transform.scale(pygame.image.load("./assets/images/white_bishop.png"), (self.piece_size, self.piece_size)),
-            'white_knight': pygame.transform.scale(pygame.image.load("./assets/images/white_knight.png"), (self.piece_size, self.piece_size)),
-            'white_rook': pygame.transform.scale(pygame.image.load("./assets/images/white_rook.png"), (self.piece_size, self.piece_size)),
-            'white_queen': pygame.transform.scale(pygame.image.load("./assets/images/white_queen.png"), (self.piece_size, self.piece_size)),
-            'white_king': pygame.transform.scale(pygame.image.load("./assets/images/white_king.png"), (self.piece_size, self.piece_size)),
-            'black_pawn': pygame.transform.scale(pygame.image.load("./assets/images/black_pawn.png"), (self.piece_size, self.piece_size)),
-            'black_bishop': pygame.transform.scale(pygame.image.load("./assets/images/black_bishop.png"), (self.piece_size, self.piece_size)),
-            'black_knight': pygame.transform.scale(pygame.image.load("./assets/images/black_knight.png"), (self.piece_size, self.piece_size)),
-            'black_rook': pygame.transform.scale(pygame.image.load("./assets/images/black_rook.png"), (self.piece_size, self.piece_size)),
-            'black_queen': pygame.transform.scale(pygame.image.load("./assets/images/black_queen.png"), (self.piece_size, self.piece_size)),
-            'black_king': pygame.transform.scale(pygame.image.load("./assets/images/black_king.png"), (self.piece_size, self.piece_size)),
-        }
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -161,7 +143,6 @@ class Chess:
             self.DrawPieces()
         self.DrawHighlight()
         self.drawMoveLog()
-        self.drawCapturedPieces()
         self.savegame()
         self.resign()
 
@@ -321,20 +302,6 @@ class Chess:
             moveX = logX + (i % movesPerRow) * (logWidth // movesPerRow)
             moveY = logY + (i // movesPerRow) * 20
             self.screen.blit(moveTextSurface, (moveX, moveY))
-
-
-    def drawCapturedPieces(self):
-        white_start_x = Config.horizontal_offset // 2 - 20
-        black_start_x = Config.board_display_size + Config.horizontal_offset + 20
-        y_offset = Config.top_offset + 20
-
-        # Draw captured white pieces
-        for i, piece in enumerate(self.captured_white_pieces):
-            self.screen.blit(self.images[piece], (white_start_x, y_offset + i * self.piece_size))
-
-        # Draw captured black pieces
-        for i, piece in enumerate(self.captured_black_pieces):
-            self.screen.blit(self.images[piece], (black_start_x, y_offset + i * self.piece_size))
 
 
     def savegame(self):
