@@ -38,6 +38,7 @@ class Chess:
 
     def vsPlayer(self):
         pygame.event.clear()
+        sounds.game_start_sound.play()
         while not self.gameOver:
             self.clock.tick(Config.fps)
             self.background = pygame.image.load("./assets/images/mainbg2blur.png")
@@ -340,7 +341,7 @@ class Chess:
             sounds.checkmatewin_sound.play()
         else:
             sounds.checkmatelose_sound.play()
-        time.sleep(2)
+        time.sleep(5)
         self.screen.blit(self.gameOverBackground, (0, 0))
         self.gameOverHeader.Draw()
         if self.board.winner  == 0:
@@ -361,6 +362,6 @@ class Chess:
         self.gameOverHeader.Draw()
         self.winnerText.Draw()
         pygame.display.update()
-        time.sleep(30)
+        time.sleep(5)
         self.board = Board()
         self.animateSpot = 1
