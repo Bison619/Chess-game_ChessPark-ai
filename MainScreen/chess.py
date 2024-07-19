@@ -341,7 +341,7 @@ class Chess:
             sounds.checkmatewin_sound.play()
         else:
             sounds.checkmatelose_sound.play()
-        time.sleep(5)
+        time.sleep(3)
         self.screen.blit(self.gameOverBackground, (0, 0))
         self.gameOverHeader.Draw()
         if self.board.winner  == 0:

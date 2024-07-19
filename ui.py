@@ -12,6 +12,7 @@ class TextUI:
         self.textColor = color
         self.font = pygame.font.Font("./assets/font/KnightWarrior-w16n8.ttf", self.fontSize)
         self.centered = False
+
     def Draw(self):
         mytext = self.font.render(self.text, True, self.textColor)
 
@@ -20,6 +21,28 @@ class TextUI:
             self.screen.blit(mytext, text_rect)
         else:
             self.screen.blit(mytext, (self.x, self.y))
+
+class Text2UI:
+    def __init__(self, screen, text, x, y, fontSize, color):
+        self.screen = screen
+        self.text = text
+        self.x = x
+        self.y = y
+        self.fontSize = fontSize
+        self.color = color
+        self.textColor = color
+        self.font = pygame.font.Font("./assets/font/Roboto-Bold.ttf", self.fontSize)
+        self.centered = False
+
+    def Draw(self):
+        lines = self.text.split("\n")
+        for i, line in enumerate(lines):
+            mytext = self.font.render(line, True, self.textColor)
+            if self.centered:
+                text_rect = mytext.get_rect(center=(self.x, self.y + i * self.fontSize))
+                self.screen.blit(mytext, text_rect)
+            else:
+                self.screen.blit(mytext, (self.x, self.y + i * self.fontSize))
 
 class Button:
     def __init__(self, screen, x, y, w, h, text):
