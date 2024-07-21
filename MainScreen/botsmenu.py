@@ -10,9 +10,9 @@ class BotsMenu:
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
         self.header_text = TextUI(screen, "Bots", Config.width // 2 - 70, 30, 72, (255, 255, 255))
-        self.subheader_beginner = TextUI(screen, "Beginner", Config.width // 2 - 60, 140, 32, (200, 200, 200))
-        self.subheader_intermediate = TextUI(screen, "Intermediate", Config.width // 2 - 70, 400, 32, (200, 200, 200))
-        self.subheader_expert = TextUI(screen, "Expert", Config.width // 2 - 70, 660, 32, (200, 200, 200))
+        self.subheader_beginner = TextUI(screen, "Beginner", Config.width // 2 - 60, 140, 32, (0, 255, 0))
+        self.subheader_intermediate = TextUI(screen, "Intermediate", Config.width // 2 - 70, 400, 32, (255, 255, 0))
+        self.subheader_expert = TextUI(screen, "Expert", Config.width // 2 - 70, 660, 32, (255, 0, 0))
         box_width = 130
         box_height = 130
         box_spacing = 60
@@ -39,12 +39,12 @@ class BotsMenu:
 
         # Text below boxes of the player and elo
         self.bot_texts = [
-            Text2UI(screen, "Name: Max\nELO: 100", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (255, 255, 255)),
-            Text2UI(screen, "Name: Alice\nELO: 120", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (255, 255, 255)),
-            Text2UI(screen, "Name: Bob\nELO: 90", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (255, 255, 255)),
-            Text2UI(screen, "Name: Charlie\nELO: 150", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 255)),
-            Text2UI(screen, "Name: Emily\nELO: 110", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 255)),
-            Text2UI(screen, "Name: Jack\nELO: 95", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 255, 255))
+            Text2UI(screen, "Name: Max\nELO: 100", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Alice\nELO: 120", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Bob\nELO: 90", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Charlie\nELO: 150", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: Emily\nELO: 110", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: Jack\nELO: 95", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 0, 0))
         ]
 
         button_y_start = Config.height // 2 - 20

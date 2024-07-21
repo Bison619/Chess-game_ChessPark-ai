@@ -10,7 +10,7 @@ class setting:
         self.height = 900
         self.resolution = (self.width, self.height)
         self.fps = 60
-        self.board_display_size = 800  # Size of the board display area (800x800)
+        self.board_display_size = 800
         self.spotSize = self.board_display_size // self.boardSize
         self.top_offset = (self.height - self.board_display_size) // 2
         self.horizontal_offset = (self.width - self.board_display_size) // 2
