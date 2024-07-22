@@ -8,9 +8,11 @@ from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
 from ui import Button
 import ui
+from AI.ChessAI import Minimax
+from AI.BotManager import BotManager
 
 class Chess:
-    def __init__(self, screen):
+    def __init__(self, screen, ai_depth=1):
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.piece_size = 40
@@ -32,9 +34,26 @@ class Chess:
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.scale(self.background, Config.resolution)
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
+        self.ComputerAI = Minimax(ai_depth, self.board, True, True)
 
     def GetFrameRate(self):
         return self.clock.get_fps()
+
+    def vsComputer(self):
+        pygame.event.clear()
+        sounds.game_start_sound.play()
+        while not self.gameOver:
+            self.clock.tick(Config.fps)
+            self.background = pygame.image.load("./assets/images/mainbg2blur.png")
+            self.getMousePosition()
+            # update window caption
+            pygame.display.set_caption("Chess : VS Computer " + str(int(self.GetFrameRate())))
+            self.display()
+            self.ComputerMoves(1)
+            if self.gameOver == False:
+                if self.animateSpot >= Config.spotSize:
+                    self.HandleEvents()
+                    self.IsGameOver()
 
     def vsPlayer(self):
         pygame.event.clear()
@@ -48,6 +67,9 @@ class Chess:
             if self.animateSpot >= Config.spotSize:
                 self.HandleEvents()
             self.IsGameOver()
+
+    def set_ai_depth(self, depth):
+        self.ComputerAI = Minimax(depth, self.board, True, True)
 
     def display(self):
         self.Render()
@@ -129,6 +151,19 @@ class Chess:
                     self.draggedPiece = piece
                 else:
                     self.SelectPiece(piece)
+
+    def ComputerMoves(self, player):
+        if self.board.player == player:
+            piece, bestmove = self.ComputerAI.Start(0)
+            self.board.Move(piece, bestmove)
+            if self.board.pieceToPromote is not None:
+                self.board.PromotePawn(self.board.pieceToPromote, 0)
+
+            if bestmove:
+                if self.board.GetPiece(bestmove) is not None:
+                    sounds.move_sound.play()
+                else:
+                    self.move_sound.play()
 
     def getMousePosition(self):
         x, y = pygame.mouse.get_pos()

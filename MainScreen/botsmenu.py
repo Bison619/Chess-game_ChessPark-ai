@@ -1,18 +1,29 @@
+# BotsMenu.py
+
 import pygame
 from setting import Config, sounds
 from MainScreen.fadeeffect import fade_out
 from ui import TextUI, Text2UI
+from board import Board
 import ui
+from AI.BotManager import BotManager
+from MainScreen.chess import Chess
 
 class BotsMenu:
     def __init__(self, screen):
         self.screen = screen
+        self.board = Board()
+        self.bot_manager = BotManager(self.board)
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
         self.header_text = TextUI(screen, "Bots", Config.width // 2 - 70, 30, 72, (255, 255, 255))
         self.subheader_beginner = TextUI(screen, "Beginner", Config.width // 2 - 60, 140, 32, (0, 255, 0))
         self.subheader_intermediate = TextUI(screen, "Intermediate", Config.width // 2 - 70, 400, 32, (255, 255, 0))
         self.subheader_expert = TextUI(screen, "Expert", Config.width // 2 - 70, 660, 32, (255, 0, 0))
+        self.clock = pygame.time.Clock()
+        self.chess = Chess(screen)
+
+
         box_width = 130
         box_height = 130
         box_spacing = 60
@@ -72,6 +83,24 @@ class BotsMenu:
             sounds.button_sound.play()
             fade_out(screen)
             return 'play'
+        for i, (x, y) in enumerate(self.box_positions):
+            if pygame.Rect(x, y, 130, 130).collidepoint(mouse_position):
+                self.chess.vsComputer()
+                sounds.button_sound.play()
+                fade_out(screen)
+                return None
+
+    def start_game(self, index):
+        depth_mapping = {
+            0: 1,  # Beginner 1
+            1: 2,  # Beginner 2
+            2: 3,  # Beginner 3
+            3: 4,  # Intermediate 1
+            4: 5,  # Intermediate 2
+            5: 6   # Expert
+        }
+        depth = depth_mapping.get(index, 1)
+        self.chess = Chess(self.screen, ai_depth=depth)
 
     def Run(self):
         while self.running:
