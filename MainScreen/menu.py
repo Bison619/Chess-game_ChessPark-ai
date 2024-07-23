@@ -5,7 +5,7 @@ from MainScreen.chess import Chess
 from MainScreen.fadeeffect import fade_in,fade_out
 # for back-ground music
 pygame.mixer.music.load(os.path.join('assets/sounds/bg space music.mp3'))
-pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
 
 

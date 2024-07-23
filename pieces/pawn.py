@@ -7,7 +7,7 @@ class Pawn(Piece):
     def __init__(self, position, color):
         super().__init__(position, color)
         self.code = "p"
-        self.value = 10 if color == 0 else -10
+        self.value = 1 if color == 0 else -1
         self.sprite = GetSprite(self)
         self.previousMove = None
         self.pieceMap = []

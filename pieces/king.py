@@ -7,11 +7,10 @@ class King(Piece):
     def __init__(self, position, color):
         super().__init__(position, color)
         self.code = "k"
-        # self.value = 100 if color == 0 else -100
         self.sprite = GetSprite(self)
         self.previousMove = None
         self.pieceMap = []
-        self.value = 900 if color == 0 else -900
+        self.value = 100 if color == 0 else -100
 
     def CanCastle(piece):
         return piece != None and piece.previousMove == None

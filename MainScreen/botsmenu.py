@@ -1,19 +1,15 @@
-# BotsMenu.py
-
 import pygame
 from setting import Config, sounds
 from MainScreen.fadeeffect import fade_out
 from ui import TextUI, Text2UI
 from board import Board
 import ui
-from AI.BotManager import BotManager
 from MainScreen.chess import Chess
 
 class BotsMenu:
     def __init__(self, screen):
         self.screen = screen
         self.board = Board()
-        self.bot_manager = BotManager(self.board)
         self.background = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
         self.header_text = TextUI(screen, "Bots", Config.width // 2 - 70, 30, 72, (255, 255, 255))
@@ -21,8 +17,6 @@ class BotsMenu:
         self.subheader_intermediate = TextUI(screen, "Intermediate", Config.width // 2 - 70, 400, 32, (255, 255, 0))
         self.subheader_expert = TextUI(screen, "Expert", Config.width // 2 - 70, 660, 32, (255, 0, 0))
         self.clock = pygame.time.Clock()
-        self.chess = Chess(screen)
-
 
         box_width = 130
         box_height = 130
@@ -85,7 +79,8 @@ class BotsMenu:
             return 'play'
         for i, (x, y) in enumerate(self.box_positions):
             if pygame.Rect(x, y, 130, 130).collidepoint(mouse_position):
-                self.chess.vsComputer()
+                self.start_game(i)
+                pygame.event.clear()
                 sounds.button_sound.play()
                 fade_out(screen)
                 return None
@@ -100,7 +95,9 @@ class BotsMenu:
             5: 6   # Expert
         }
         depth = depth_mapping.get(index, 1)
+        print(f"AI Depth: {depth}")
         self.chess = Chess(self.screen, ai_depth=depth)
+        self.chess.vsComputer()
 
     def Run(self):
         while self.running:
@@ -118,3 +115,24 @@ class BotsMenu:
 
             self.DrawButtons()
             pygame.display.update()
+
+if __name__ == "__main__":
+    pygame.init()
+    screen = pygame.display.set_mode(Config.resolution)
+    pygame.display.set_caption("Bots Menu Test")
+
+    bots_menu = BotsMenu(screen)
+
+    running = True
+    while running:
+        screen.fill((0, 0, 0))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+                bots_menu.HandleClick(screen)
+
+        bots_menu.DrawButtons()
+        pygame.display.flip()
+
+    pygame.quit()

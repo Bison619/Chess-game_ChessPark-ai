@@ -7,7 +7,7 @@ class Rook(Piece):
     def __init__(self, position, color):
         super().__init__(position, color)
         self.code = "r"
-        self.value = 50 if color == 0 else -50
+        self.value = 5 if color == 0 else -5
         self.sprite = GetSprite(self)
         self.previousMove = None
         self.pieceMap = []

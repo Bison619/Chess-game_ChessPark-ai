@@ -9,7 +9,7 @@ class Queen(Bishop, Rook, Piece):
     def __init__(self, position, color):
         super().__init__(position, color)
         self.code = "q"
-        self.value = 90 if color == 0 else -90
+        self.value = 9 if color == 0 else -9
         self.sprite = GetSprite(self)
         self.previousMove = None
         self.pieceMap = []

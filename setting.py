@@ -27,7 +27,7 @@ class setting:
             # GREEN THEME
             {"dark": (119, 154, 88), "light": (234, 235, 200), "outline": (0, 0, 0)},
         ]
-
+        self.ai_depth = 1
 class Sound:
     def __init__(self):
         self.capture_sound = pygame.mixer.Sound("./assets/sounds/capture.mp3")

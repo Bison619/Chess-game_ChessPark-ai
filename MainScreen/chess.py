@@ -9,7 +9,6 @@ from board import Board
 from ui import Button
 import ui
 from AI.ChessAI import Minimax
-from AI.BotManager import BotManager
 
 class Chess:
     def __init__(self, screen, ai_depth=1):

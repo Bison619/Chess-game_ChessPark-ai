@@ -7,7 +7,7 @@ class Bishop(Piece):
     def __init__(self, position, color):
         super().__init__(position, color)
         self.code = "b"
-        self.value = 30 if color == 0 else -30
+        self.value = 3 if color == 0 else -3
         self.sprite = GetSprite(self)
         self.previousMove = None
         self.pieceMap = []
