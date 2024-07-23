@@ -103,6 +103,19 @@ class Chess:
                 if event.button == 1:
                     self.HandleOnLeftMouseButtonUp()
 
+    def ComputerMoves(self, player):
+        if self.board.player == player:
+            piece, bestmove = self.ComputerAI.Start(0)
+            self.board.Move(piece, bestmove)
+            if self.board.pieceToPromote is not None:
+                self.board.PromotePawn(self.board.pieceToPromote, 0)
+
+            if bestmove:
+                if self.board.GetPiece(bestmove) is not None:
+                    sounds.move_sound.play()
+                else:
+                    self.move_sound.play()
+
     def HandleOnLeftMouseButtonUp(self):
         self.draggedPiece = None
         if self.selectedPiece:
@@ -150,19 +163,6 @@ class Chess:
                     self.draggedPiece = piece
                 else:
                     self.SelectPiece(piece)
-
-    def ComputerMoves(self, player):
-        if self.board.player == player:
-            piece, bestmove = self.ComputerAI.Start(0)
-            self.board.Move(piece, bestmove)
-            if self.board.pieceToPromote is not None:
-                self.board.PromotePawn(self.board.pieceToPromote, 0)
-
-            if bestmove:
-                if self.board.GetPiece(bestmove) is not None:
-                    sounds.move_sound.play()
-                else:
-                    self.move_sound.play()
 
     def getMousePosition(self):
         x, y = pygame.mouse.get_pos()

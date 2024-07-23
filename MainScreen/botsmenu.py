@@ -58,6 +58,8 @@ class BotsMenu:
 
         self.running = True
         self.clock = pygame.time.Clock()
+        self.chess = None
+
 
     def DrawButtons(self):
         self.screen.blit(self.background, (0, 0))
@@ -80,9 +82,7 @@ class BotsMenu:
         for i, (x, y) in enumerate(self.box_positions):
             if pygame.Rect(x, y, 130, 130).collidepoint(mouse_position):
                 self.start_game(i)
-                pygame.event.clear()
-                sounds.button_sound.play()
-                fade_out(screen)
+                self.screen.blit(self.background, (0, 0))
                 return None
 
     def start_game(self, index):
@@ -97,11 +97,16 @@ class BotsMenu:
         depth = depth_mapping.get(index, 1)
         print(f"AI Depth: {depth}")
         self.chess = Chess(self.screen, ai_depth=depth)
+    # Set the background to mainbg
+        sounds.button_sound.play()
         self.chess.vsComputer()
+        self.background = pygame.image.load("./assets/images/mainbg2blur.png")
+        self.clock.tick(Config.fps)
 
     def Run(self):
         while self.running:
             self.clock.tick(Config.fps)
+            self.screen.blit(self.background, (0, 0))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
@@ -113,26 +118,7 @@ class BotsMenu:
                     if next_screen:
                         return next_screen
 
+            self.screen.blit(self.background, (0, 0))
             self.DrawButtons()
             pygame.display.update()
 
-if __name__ == "__main__":
-    pygame.init()
-    screen = pygame.display.set_mode(Config.resolution)
-    pygame.display.set_caption("Bots Menu Test")
-
-    bots_menu = BotsMenu(screen)
-
-    running = True
-    while running:
-        screen.fill((0, 0, 0))
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-                bots_menu.HandleClick(screen)
-
-        bots_menu.DrawButtons()
-        pygame.display.flip()
-
-    pygame.quit()
