@@ -35,6 +35,13 @@ class Chess:
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
         self.ComputerAI = Minimax(ai_depth, self.board, True, True)
 
+        # for button
+        button_y_start = Config.height // 2 - 60
+        button_spacing = 110
+        self.Save = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3 * button_spacing, 200, 60, "Save Game")
+        self.Resign = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3.8 * button_spacing, 200, 60, "Resign Game")
+
+
     def GetFrameRate(self):
         return self.clock.get_fps()
 
@@ -74,6 +81,7 @@ class Chess:
         self.Render()
         pygame.display.update()
 
+
     def HandleEvents(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -103,6 +111,7 @@ class Chess:
                 if event.button == 1:
                     self.HandleOnLeftMouseButtonUp()
 
+
     def ComputerMoves(self, player):
         if self.board.player == player:
             piece, bestmove = self.ComputerAI.Start(0)
@@ -115,6 +124,7 @@ class Chess:
                     sounds.move_sound.play()
                 else:
                     self.move_sound.play()
+
 
     def HandleOnLeftMouseButtonUp(self):
         self.draggedPiece = None
@@ -144,6 +154,10 @@ class Chess:
 
 
     def HandleOnLeftMouseButtonDown(self):
+        mouse_position = pygame.mouse.get_pos()
+        if self.Resign.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            self.board.Forfeit()
         if self.board.pieceToPromote != None and self.AdjustedMouse.x == self.board.pieceToPromote.position.x:
             choice = self.AdjustedMouse.y
             if choice <= 3 and self.board.player == 0:
@@ -191,8 +205,8 @@ class Chess:
             self.DrawPieces()
         self.DrawHighlight()
         self.drawMoveLog()
-        self.savegame()
-        self.resign()
+        self.Save.Draw()
+        self.Resign.Draw()
 
     def DrawChessBoard(self):
         if self.animateSpot < Config.spotSize:
@@ -352,24 +366,6 @@ class Chess:
             self.screen.blit(moveTextSurface, (moveX, moveY))
 
 
-    def savegame(self):
-        logX = Config.board_display_size + Config.horizontal_offset + 80
-        logY = Config.top_offset + 650
-        logWidth = Config.resolution[0] - logX - 150
-        button_height = 50
-        button_text = "Save Game"
-        save_button = Button(self.screen, logX + logWidth // 2, logY + button_height // 2, logWidth, button_height, button_text)
-        save_button.Draw()
-
-    def resign(self):
-        logX = Config.board_display_size + Config.horizontal_offset + 80
-        logY = Config.top_offset + 750
-        logWidth = Config.resolution[0] - logX - 150
-        button_height = 50
-        button_text = "Resign"
-        save_button = Button(self.screen, logX + logWidth // 2, logY + button_height // 2, logWidth, button_height, button_text)
-        save_button.Draw()
-
     def gameOverWindow(self):
         if self.board.winner >= 0:
             sounds.checkmatewin_sound.play()
@@ -391,7 +387,7 @@ class Chess:
             scaled_king_image = pygame.transform.scale(king_image, (king_image.get_width() + 20, king_image.get_height() + 20))
             self.screen.blit(scaled_king_image, (Config.width // 2 - Config.spotSize // 2, Config.height // 3 - 50))
         else:
-            self.winnerText.text = "DRAW"
+            self.winnerText.text = "StaleMate"
 
         self.gameOverHeader.Draw()
         self.winnerText.Draw()

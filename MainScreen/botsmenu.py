@@ -82,8 +82,8 @@ class BotsMenu:
         for i, (x, y) in enumerate(self.box_positions):
             if pygame.Rect(x, y, 130, 130).collidepoint(mouse_position):
                 self.start_game(i)
+                pygame.mixer.music.stop()
                 self.screen.blit(self.background, (0, 0))
-                return None
 
     def start_game(self, index):
         depth_mapping = {
