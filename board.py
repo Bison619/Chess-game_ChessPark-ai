@@ -38,6 +38,21 @@ class Board:
         self.captured_white_pieces = []
         self.captured_black_pieces = []
 
+
+    def get_piece_from_code(self, code, color, position):
+        pieces = {
+            'p': Pawn,
+            'r': Rook,
+            'n': Knight,
+            'b': Bishop,
+            'q': Queen,
+            'k': King
+        }
+        piece_class = pieces.get(code.lower())
+        if piece_class:
+            return piece_class(position, color)
+        return None
+
     def Forfeit(self):
         # Resign
         self.winner = 1 if self.player == 0 else 0

@@ -1,12 +1,20 @@
 import pygame
 import ui
+import os
+import json
+
+from Fen import *
+from utils import GetSprite
 from setting import Config,sounds
+from board import Board
 from MainScreen.chess import Chess
+from tools import Position
 from MainScreen.fadeeffect import fade_out
 
 class LoadMenu:
     def __init__(self, screen):
         self.screen = screen
+        self.board = Board
         self.background = pygame.image.load("./assets/images/mainbg2.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
 
@@ -25,6 +33,11 @@ class LoadMenu:
         self.running = True
         self.clock = pygame.time.Clock()
         self.chess = Chess(screen)
+        self.save_slots = [
+            self.Save1,
+            self.Save2,
+            self.Save3
+        ]
 
     def DrawButtons(self):
         self.Save1.Draw()
@@ -32,20 +45,41 @@ class LoadMenu:
         self.Save3.Draw()
         self.back.Draw()
 
-    def HandleClick(self,screen):
+    def LoadGame(self, slot_number):
+        save_slot = f"save_slot_{slot_number}.json"
+        save_path = os.path.join("Saved_Games", save_slot)
+
+        if os.path.exists(save_path):
+            with open(save_path, 'r') as f:
+                game_state = json.load(f)
+
+            self.chess.player_turn = game_state["player_turn"]
+
+            # Clear the current board
+            self.chess.board.grid = [[None for _ in range(8)] for _ in range(8)]
+
+            # Load new state
+            for y, row in enumerate(game_state["board_state"]):
+                for x, piece_info in enumerate(row):
+                    if piece_info:
+                        piece_code, color = piece_info
+                        piece = self.chess.board.get_piece_from_code(piece_code, color, Position(y, x))
+                        piece.sprite = GetSprite(piece)
+                        self.chess.board.grid[y][x] = piece
+            self.chess.Render()
+            self.chess.vsPlayer()
+
+
+
+    def HandleClick(self, screen):
         mouse_position = pygame.mouse.get_pos()
-        if self.Save1.get_rect().collidepoint(mouse_position):
-            sounds.button_sound.play()
+        for i, button in enumerate(self.save_slots):
+            if button.get_rect().collidepoint(mouse_position):
+                sounds.button_sound.play()
+                self.LoadGame(i + 1)
+                return
 
-        elif self.Save2.get_rect().collidepoint(mouse_position):
-            sounds.button_sound.play()
-            pass
-
-        elif self.Save3.get_rect().collidepoint(mouse_position):
-            sounds.button_sound.play()
-            pass
-
-        elif self.back.get_rect().collidepoint(mouse_position):
+        if self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
             return 'main'

@@ -1,6 +1,8 @@
 import pygame
 import sys
 import time
+import json
+import os
 
 from setting import Config, sounds
 from tools import Position, OnBoard
@@ -34,12 +36,15 @@ class Chess:
         self.background = pygame.transform.scale(self.background, Config.resolution)
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
         self.ComputerAI = Minimax(ai_depth, self.board, True, True)
+        self.current_save_slot = 1
+        self.player_turn = 0
 
         # for button
         button_y_start = Config.height // 2 - 60
         button_spacing = 110
         self.Save = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3 * button_spacing, 200, 60, "Save Game")
         self.Resign = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3.8 * button_spacing, 200, 60, "Resign Game")
+
 
 
     def GetFrameRate(self):
@@ -104,7 +109,7 @@ class Chess:
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     # print(self.AdjustedMouse)
-                    self.HandleOnLeftMouseButtonDown()
+                    self.HandleOnLeftMouseButtonDown(event)
                 elif event.button == 3:
                     pass
             elif event.type == pygame.MOUSEBUTTONUP:
@@ -153,11 +158,16 @@ class Chess:
             self.selectedOrigin = self.AdjustedMouse
 
 
-    def HandleOnLeftMouseButtonDown(self):
+
+    def HandleOnLeftMouseButtonDown(self,event):
         mouse_position = pygame.mouse.get_pos()
         if self.Resign.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             self.board.Forfeit()
+        if self.Save.get_rect().collidepoint(event.pos):
+            sounds.button_sound.play()
+            self.save_game()
+            # return 'main'
         if self.board.pieceToPromote != None and self.AdjustedMouse.x == self.board.pieceToPromote.position.x:
             choice = self.AdjustedMouse.y
             if choice <= 3 and self.board.player == 0:
@@ -364,6 +374,22 @@ class Chess:
             moveX = logX + (i % movesPerRow) * (logWidth // movesPerRow)
             moveY = logY + (i // movesPerRow) * 20
             self.screen.blit(moveTextSurface, (moveX, moveY))
+
+
+
+    def save_game(self):
+        game_state = {
+            "player_turn": self.player_turn,
+            "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
+        }
+
+        save_slot = f"save_slot_{self.current_save_slot}.json"
+        save_path = os.path.join("Saved_Games", save_slot)
+
+        with open(save_path, 'w') as f:
+            json.dump(game_state, f)
+
+        self.current_save_slot = (self.current_save_slot % 3) + 1
 
 
     def gameOverWindow(self):
