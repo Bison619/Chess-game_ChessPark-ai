@@ -14,7 +14,7 @@ from MainScreen.fadeeffect import fade_out
 class LoadMenu:
     def __init__(self, screen):
         self.screen = screen
-        self.board = Board
+        self.board = Board()
         self.background = pygame.image.load("./assets/images/mainbg2.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
 
@@ -53,10 +53,15 @@ class LoadMenu:
             with open(save_path, 'r') as f:
                 game_state = json.load(f)
 
-            self.chess.player_turn = game_state["player_turn"]
+            self.board.player = game_state["player_turn"]
+            if self.board.player == 1:
+                self.board.SwitchTurn()
 
             # Clear the current board
             self.chess.board.grid = [[None for _ in range(8)] for _ in range(8)]
+
+            if self.board.player == 1:
+                self.board.SwitchTurn()
 
             # Load new state
             for y, row in enumerate(game_state["board_state"]):

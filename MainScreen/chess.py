@@ -36,9 +36,9 @@ class Chess:
         self.background = pygame.transform.scale(self.background, Config.resolution)
         self.moveLogFont = pygame.font.SysFont("Verdana", 18)
         self.ComputerAI = Minimax(ai_depth, self.board, True, True)
-        self.current_save_slot = 1
         self.player_turn = 0
-
+        self.current_save_slot = 1
+        self.placeholder_player_turn = self.player_turn
         # for button
         button_y_start = Config.height // 2 - 60
         button_spacing = 110
@@ -377,20 +377,33 @@ class Chess:
 
 
 
+    # def save_game(self):
+    #     game_state = {
+    #         "player_turn": self.board.player,
+    #         "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
+    #     }
+
+    #     save_slot = f"save_slot_{self.current_save_slot}.json"
+    #     save_path = os.path.join("Saved_Games", save_slot)
+
+    #     with open(save_path, 'w') as f:
+    #         json.dump(game_state, f)
+
+    #     self.current_save_slot = (self.current_save_slot % 3) + 1
+
     def save_game(self):
-        game_state = {
-            "player_turn": self.player_turn,
-            "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
-        }
+            game_state = {
+                "player_turn": self.board.player,
+                "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
+            }
 
-        save_slot = f"save_slot_{self.current_save_slot}.json"
-        save_path = os.path.join("Saved_Games", save_slot)
+            save_slot = f"save_slot_{self.current_save_slot}.json"
+            save_path = os.path.join("Saved_Games", save_slot)
 
-        with open(save_path, 'w') as f:
-            json.dump(game_state, f)
+            with open(save_path, 'w') as f:
+                json.dump(game_state, f)
 
-        self.current_save_slot = (self.current_save_slot % 3) + 1
-
+            self.current_save_slot = (self.current_save_slot % 3) + 1
 
     def gameOverWindow(self):
         if self.board.winner >= 0:
