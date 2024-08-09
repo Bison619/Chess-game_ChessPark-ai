@@ -392,18 +392,29 @@ class Chess:
     #     self.current_save_slot = (self.current_save_slot % 3) + 1
 
     def save_game(self):
-            game_state = {
-                "player_turn": self.board.player,
-                "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
-            }
+        game_state = {
+            "player_turn": self.board.player,
+            "board_state": [[(piece.code, piece.color) if piece else None for piece in row] for row in self.board.grid]
+        }
 
-            save_slot = f"save_slot_{self.current_save_slot}.json"
+        # Find the next available save slot
+        for slot in range(1, 4):  # for 3 slots
+            save_slot = f"save_slot_{slot}.json"
             save_path = os.path.join("Saved_Games", save_slot)
 
-            with open(save_path, 'w') as f:
-                json.dump(game_state, f)
+            if not os.path.exists(save_path):
+                # If this slot doesn't exist, use it
+                with open(save_path, 'w') as f:
+                    json.dump(game_state, f)
+                print(f"Game saved in slot {slot}")
+                return
 
-            self.current_save_slot = (self.current_save_slot % 3) + 1
+        # If all slots are used, overwrite the oldest one (slot 1)
+        save_slot = "save_slot_1.json"
+        save_path = os.path.join("Saved_Games", save_slot)
+        with open(save_path, 'w') as f:
+            json.dump(game_state, f)
+        print("All save slots were full. Overwrote save slot 1.")
 
     def gameOverWindow(self):
         if self.board.winner >= 0:

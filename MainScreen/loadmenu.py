@@ -53,15 +53,12 @@ class LoadMenu:
             with open(save_path, 'r') as f:
                 game_state = json.load(f)
 
-            self.board.player = game_state["player_turn"]
-            if self.board.player == 1:
-                self.board.SwitchTurn()
+            # Set the player turn
+            loaded_player_turn = game_state["player_turn"]
+            self.chess.board.player = loaded_player_turn
 
             # Clear the current board
             self.chess.board.grid = [[None for _ in range(8)] for _ in range(8)]
-
-            if self.board.player == 1:
-                self.board.SwitchTurn()
 
             # Load new state
             for y, row in enumerate(game_state["board_state"]):
@@ -71,9 +68,9 @@ class LoadMenu:
                         piece = self.chess.board.get_piece_from_code(piece_code, color, Position(y, x))
                         piece.sprite = GetSprite(piece)
                         self.chess.board.grid[y][x] = piece
+
             self.chess.Render()
             self.chess.vsPlayer()
-
 
 
     def HandleClick(self, screen):
