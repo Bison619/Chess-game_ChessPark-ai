@@ -16,7 +16,6 @@ class Chess:
     def __init__(self, screen, ai_depth=1):
         self.screen = screen
         self.clock = pygame.time.Clock()
-        self.piece_size = 40
         self.board = Board()
         self.gameOver = False
         self.animateSpot = 5
@@ -215,6 +214,7 @@ class Chess:
             self.DrawPieces()
         self.DrawHighlight()
         self.drawMoveLog()
+        self.drawCapturedPieces()
         self.Save.Draw()
         self.Resign.Draw()
 
@@ -376,6 +376,35 @@ class Chess:
             self.screen.blit(moveTextSurface, (moveX, moveY))
 
 
+    def drawCapturedPieces(self):
+        # Define rectangle dimensions and positions
+        rect_width = 300
+        rect_height = 200
+        left_margin = 60
+        top_margin = Config.top_offset
+        bottom_margin = Config.top_offset + Config.board_display_size - rect_height
+
+        # Draw rectangles
+        pygame.draw.rect(self.screen, (204, 204, 204), [left_margin, top_margin, rect_width, rect_height], border_radius=10)
+        pygame.draw.rect(self.screen, (204, 204, 204), [left_margin, bottom_margin, rect_width, rect_height], border_radius=10)
+
+        # Draw captured pieces
+        piece_size = 50
+        pieces_per_row = rect_width // piece_size
+
+        # Draw white captured pieces (top rectangle)
+        for i, piece in enumerate(self.board.captured_white_pieces):
+            x = left_margin + (i % pieces_per_row) * piece_size
+            y = top_margin + (i // pieces_per_row) * piece_size
+            sprite = pygame.transform.scale(GetSprite(piece), (piece_size, piece_size))
+            self.screen.blit(sprite, (x, y))
+
+        # Draw black captured pieces (bottom rectangle)
+        for i, piece in enumerate(self.board.captured_black_pieces):
+            x = left_margin + (i % pieces_per_row) * piece_size
+            y = bottom_margin + (i // pieces_per_row) * piece_size
+            sprite = pygame.transform.scale(GetSprite(piece), (piece_size, piece_size))
+            self.screen.blit(sprite, (x, y))
 
     # def save_game(self):
     #     game_state = {

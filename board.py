@@ -123,14 +123,18 @@ class Board:
     def Move(self, piece, position):
         if position != None:
             position = position.GetCopy()
-            # print(position)
             if self.isCastling(piece, position.GetCopy()):
                 self.CastleKing(piece, position.GetCopy())
             elif self.isEnPassant(piece, position.GetCopy()):
+                captured_piece = self.grid[position.x][piece.position.y]
                 self.grid[position.x][piece.position.y] = None
                 self.MovePiece(piece, position)
                 self.historic[-1][2] = piece.code + " EP"
+                self.addCapturedPiece(captured_piece)
             else:
+                captured_piece = self.grid[position.x][position.y]
+                if captured_piece:
+                    self.addCapturedPiece(captured_piece)
                 self.MovePiece(piece, position)
             # check for promotion
             if type(piece) == Pawn and (piece.position.y == 0 or piece.position.y == 7):
@@ -138,6 +142,12 @@ class Board:
             else:
                 self.SwitchTurn()
             self.Check()
+
+    def addCapturedPiece(self, piece):
+        if piece.color == 0:
+            self.captured_white_pieces.append(piece)
+        else:
+            self.captured_black_pieces.append(piece)
 
     def MovePiece(self, piece, position):
         position = position.GetCopy()
