@@ -38,6 +38,15 @@ class Board:
         self.captured_white_pieces = []
         self.captured_black_pieces = []
 
+    def hash(self):
+        board_hash = ''
+        for row in self.grid:
+            for piece in row:
+                if piece is None:
+                    board_hash += '1'
+                else:
+                    board_hash += f'{piece.color}{piece.code}'
+        return board_hash
 
     def get_piece_from_code(self, code, color, position):
         pieces = {

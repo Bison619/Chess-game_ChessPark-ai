@@ -1,7 +1,34 @@
-import pygame
 from AI.PointMap import map_points, PieceMap
 from pieces import Pawn
-import math
+
+
+class TranspositionTable:
+    def __init__(self):
+        self.table = {}
+
+    def lookup(self, board_hash, depth, alpha, beta):
+        if board_hash in self.table:
+            entry = self.table[board_hash]
+            if entry['depth'] >= depth:
+                if entry['flag'] == 'exact':
+                    return entry['score']
+                elif entry['flag'] == 'lowerbound' and entry['score'] > alpha:
+                    alpha = entry['score']
+                elif entry['flag'] == 'upperbound' and entry['score'] < beta:
+                    beta = entry['score']
+                if alpha >= beta:
+                    return entry['score']
+        return None
+
+    def store(self, board_hash, depth, score, alpha, beta):
+        entry = {'depth': depth, 'score': score}
+        if score <= alpha:
+            entry['flag'] = 'upperbound'
+        elif score >= beta:
+            entry['flag'] = 'lowerbound'
+        else:
+            entry['flag'] = 'exact'
+        self.table[board_hash] = entry
 
 class Minimax(object):
     def __init__(self, depth, board, AlphBetaPruning=True, UsePointMaps=True):
@@ -9,6 +36,7 @@ class Minimax(object):
         self.board = board
         self.AlphaBetaPruning = AlphBetaPruning
         self.UsePointMaps = UsePointMaps
+        self.transposition_table = TranspositionTable()
 
     def Start(self, depth):
         bestMove = None
@@ -47,6 +75,11 @@ class Minimax(object):
         return currentPiece, bestMove
 
     def minimax(self, depth, isMaximizer, alpha, beta):
+        board_hash = self.board.hash()
+        tt_entry = self.transposition_table.lookup(board_hash, depth, alpha, beta)
+        if tt_entry is not None:
+            return tt_entry
+
         if self.depth == depth:
             return self.Evaluate() * -1
 
@@ -65,7 +98,9 @@ class Minimax(object):
                 self.UndoMove(pion, piece, prev_pos, i)
 
                 if beta <= alpha and self.AlphaBetaPruning:
-                    return bestScore
+                    break
+
+            self.transposition_table.store(board_hash, depth, bestScore, alpha, beta)
             return bestScore
         else:
             bestScore = 9999
@@ -81,7 +116,9 @@ class Minimax(object):
                     beta = min(beta, bestScore)
                 self.UndoMove(currentPiece, piece, prev_pos, i)
                 if beta <= alpha and self.AlphaBetaPruning:
-                    return bestScore
+                    break
+
+            self.transposition_table.store(board_hash, depth, bestScore, alpha, beta)
             return bestScore
 
     def Evaluate(self):

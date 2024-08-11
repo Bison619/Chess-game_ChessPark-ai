@@ -33,23 +33,23 @@ class BotsMenu:
 
         # Load images for each box
         self.images = [
-            pygame.image.load("./assets/images/bot1.png"),
-            pygame.image.load("./assets/images/bot1.png"),
-            pygame.image.load("./assets/images/bot1.png"),
-            pygame.image.load("./assets/images/bot1.png"),
-            pygame.image.load("./assets/images/bot1.png"),
-            pygame.image.load("./assets/images/bot1.png")
+            pygame.image.load("./assets/images/bbot1.png"),
+            pygame.image.load("./assets/images/bbot2.png"),
+            pygame.image.load("./assets/images/bbot3.png"),
+            pygame.image.load("./assets/images/ibot1.png"),
+            pygame.image.load("./assets/images/ibot2.png"),
+            pygame.image.load("./assets/images/ebot1.png")
         ]
         self.images = [pygame.transform.scale(image, (box_width, box_height)) for image in self.images]
 
         # Text below boxes of the player and elo
         self.bot_texts = [
-            Text2UI(screen, "Name: Max\nELO: 100", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Alice\nELO: 120", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Bob\nELO: 90", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Charlie\nELO: 150", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 0)),
-            Text2UI(screen, "Name: Emily\nELO: 110", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 0)),
-            Text2UI(screen, "Name: Jack\nELO: 95", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 0, 0))
+            Text2UI(screen, "Name: Max\nELO: 600", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Alice\nELO: 700", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Bob\nELO: 800", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Mark Rober\nELO: 1000", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: GothamChess\nELO: 1100", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: Magnus Carlson\nELO: 1500", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 0, 0))
         ]
 
         button_y_start = Config.height // 2 - 20
@@ -88,11 +88,11 @@ class BotsMenu:
     def start_game(self, index):
         depth_mapping = {
             0: 1,  # Beginner 1
-            1: 2,  # Beginner 2
-            2: 3,  # Beginner 3
-            3: 4,  # Intermediate 1
-            4: 5,  # Intermediate 2
-            5: 6   # Expert
+            1: 1,  # Beginner 2
+            2: 2,  # Beginner 3
+            3: 3,  # Intermediate 1
+            4: 3,  # Intermediate 2
+            5: 4   # Expert
         }
         depth = depth_mapping.get(index, 1)
         print(f"AI Depth: {depth}")

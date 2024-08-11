@@ -1,8 +1,11 @@
 import numpy as np
 
-map_points = [
-    # PAWN - INDEX - 0
-    np.array([
+# Define piece codes
+PAWN, BISHOP, KNIGHT, ROOK, QUEEN, KING = 'p', 'b', 'n', 'r', 'q', 'k'
+
+# Create a dictionary for faster lookup
+map_points = {
+    PAWN: np.array([
         [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
         [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
         [1.0, 1.0, 2.0, 3.0, 4.0, 2.0, 1.0, 1.0],
@@ -12,8 +15,7 @@ map_points = [
         [0.5, 1.0, 1.0, -2.0, -2.0, 1.0, 1.0, 0.5],
         [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     ]),
-    # BISHOP - INDEX - 1
-    np.array([
+    BISHOP: np.array([
         [-2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -2.0],
         [-1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0],
         [-1.0, 0.0, 0.5, 1.0, 1.0, 0.5, 0.0, -1.0],
@@ -23,8 +25,7 @@ map_points = [
         [-1.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.5, -1.0],
         [-2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -2.0]
     ]),
-    # KNIGHT - INDEX - 2
-    np.array([
+    KNIGHT: np.array([
         [-5.0, -4.0, -3.0, -3.0, -3.0, -3.0, -4.0, -5.0],
         [-4.0, -2.0, 0.0, 0.0, 0.0, 0.0, -2.0, -4.0],
         [-3.0, 0.0, 0.5, 1.5, 1.5, 0.5, 0.0, -3.0],
@@ -34,8 +35,7 @@ map_points = [
         [-4.0, -2.0, 0.0, 0.5, 0.5, 0.0, -2.0, -4.0],
         [-5.0, -4.0, -3.0, -3.0, -3.0, -3.0, -4.0, -5.0]
     ]),
-    # ROOK - INDEX - 3
-    np.array([
+    ROOK: np.array([
         [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
         [0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5],
         [-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5],
@@ -45,8 +45,7 @@ map_points = [
         [-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5],
         [0.0, 0.0, 0.0, 0.5, 0.5, 0.0, 0.0, 0.0]
     ]),
-    # QUEEN - INDEX - 4
-    np.array([
+    QUEEN: np.array([
         [-2.0, -1.0, -1.0, -0.5, -0.5, -1.0, -1.0, -2.0],
         [-1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0],
         [-1.0, 0.0, 0.5, 0.5, 0.5, 0.5, 0.0, -1.0],
@@ -56,8 +55,7 @@ map_points = [
         [-1.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, -1.0],
         [-2.0, -1.0, -1.0, -0.5, -0.5, -1.0, -1.0, -2.0]
     ]),
-    # KING - INDEX - 5
-    np.array([
+    KING: np.array([
         [-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0],
         [-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0],
         [-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0],
@@ -67,30 +65,13 @@ map_points = [
         [2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0],
         [2.0, 3.0, 1.0, 0.0, 0.0, 1.0, 3.0, 2.0]
     ])
-]
+}
 
 class Piece:
     def __init__(self, code, color):
-        self.code = code
+        self.code = code.lower()
         self.color = color
 
 def PieceMap(piece):
-    piece_map = []
-    if piece.code == "p":
-        piece_map = map_points[0]
-    elif piece.code == "b":
-        piece_map = map_points[1]
-    elif piece.code == "n":
-        piece_map = map_points[2]
-    elif piece.code == 'r':
-        piece_map = map_points[3]
-    elif piece.code == "q":
-        piece_map = map_points[4]
-    elif piece.code == "k":
-        piece_map = map_points[5]
-
-    # check color of piece
-    if piece.color == 0:
-        return piece_map
-    else:
-        return np.flip(piece_map) * (-1)
+    piece_map = map_points.get(piece.code, np.zeros((8, 8)))
+    return piece_map if piece.color == 0 else np.flip(piece_map, axis=0) * -1
