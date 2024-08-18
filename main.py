@@ -1,12 +1,14 @@
 import pygame
 import sys
 from setting import Config
-from MainScreen.menu  import Menu
+from MainScreen.menu import Menu
 from MainScreen.playmenu import PlayMenu
 from MainScreen.optionmenu import OptionMenu
 from MainScreen.loadmenu import LoadMenu
 from MainScreen.botsmenu import BotsMenu
 from MainScreen.leaderboardmenu import LeaderboardMenu
+
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode(Config.resolution)

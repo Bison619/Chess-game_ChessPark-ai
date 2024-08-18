@@ -1,35 +1,33 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import User
-from django.contrib.auth.hashers import make_password, check_password
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+import json
 
 def register(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+        email = data.get('email')
 
-        # Checking if username repeated
-        if User.objects.filter(username=username).exists():
-            return HttpResponse('Username already exists. Please choose a different one.')
+        if not User.objects.filter(username=username).exists():
+            User.objects.create_user(username=username, password=password, email=email)
+            return JsonResponse({'status': 'success'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'User already exists'})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
 
-        hashed_password = make_password(password)
-        User.objects.create(username=username, password=hashed_password)
-        return redirect('login')
-
-    return render(request, 'register.html')
-
-def login(request):
+def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
 
-        try:
-            user = User.objects.get(username=username)
-            if check_password(password, user.password):
-                return HttpResponse('Login Successful')
-            else:
-                return HttpResponse('Invalid Password')
-        except User.DoesNotExist:
-            return HttpResponse('User does not exist')
-
-    return render(request, 'login.html')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return JsonResponse({'status': 'success'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

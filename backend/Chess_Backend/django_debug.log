@@ -1,0 +1,1353 @@
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\locale with glob **/*.mo.
+Watching dir F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\locale with glob **/*.mo.
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\urls\__init__.py first seen with mtime 1723458070.0930927
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\shutil.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\mixins.py first seen with mtime 1723458076.858755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\__init__.py first seen with mtime 1723458072.67775
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\constants.py first seen with mtime 1723458076.9823647
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\base_session.py first seen with mtime 1723458075.7566094
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\cached.py first seen with mtime 1723458077.194335
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\generated.py first seen with mtime 1723458076.8567507
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\statement_splitter.py first seen with mtime 1723458068.0253913
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\dispatch\__init__.py first seen with mtime 1723458076.9911628
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\sysconfig.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\commands\__init__.py first seen with mtime 1723458076.5765424
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\__init__.py first seen with mtime 1723458077.229501
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_urls.py first seen with mtime 1723458072.222834
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\migration.py first seen with mtime 1723458076.8013036
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\validators.py first seen with mtime 1723458072.7069519
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\widgets.py first seen with mtime 1723458077.0084803
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\utils.py first seen with mtime 1723458076.8527324
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_hashlib.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\utils.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\manage.py first seen with mtime 1723457866.0091364
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\query.py first seen with mtime 1723458076.986377
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\CLIENT.py first seen with mtime 1723642780.4825735
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\base64.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_zoneinfo.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\dataclasses.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\quoprimime.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\protocols.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\_mysql.cp312-win_amd64.pyd first seen with mtime 1723642780.4562802
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\parser.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\_tzpath.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\deconstruct.py first seen with mtime 1723458077.2465794
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\subqueries.py first seen with mtime 1723458076.986377
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_lzma.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\config.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\copy.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dateformat.py first seen with mtime 1723458077.241549
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\filters.py first seen with mtime 1723458070.1086164
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\sql.py first seen with mtime 1723458068.0190897
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\detail.py first seen with mtime 1723458077.310035
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\current_thread_executor.py first seen with mtime 1723458069.0472748
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\introspection.py first seen with mtime 1723458076.7512145
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_wmi.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\commands\__init__.py first seen with mtime 1723458076.6735077
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\staggered.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\headerregistry.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\i18n.py first seen with mtime 1723458077.201343
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\validation.py first seen with mtime 1723458076.7376583
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_bz2.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\__init__.py first seen with mtime 1723457866.083177
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\reloader.py first seen with mtime 1723458077.28341
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\cookies.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\tokens.py first seen with mtime 1723458068.0313878
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\utils.py first seen with mtime 1723458077.0064747
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\dis.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ast.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\wsgi.py first seen with mtime 1723458076.59415
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\static.py first seen with mtime 1723458077.2944856
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_compat_pickle.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\decimal.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\__init__.py first seen with mtime 1723458068.026395
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\autocomplete.py first seen with mtime 1723458072.227845
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\multipartparser.py first seen with mtime 1723458077.139563
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\choices.py first seen with mtime 1723458077.2380395
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\__init__.py first seen with mtime 1723458074.8201144
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\views.py first seen with mtime 1723458072.708953
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\client.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\lookups.py first seen with mtime 1723458076.8441906
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\_exceptions.py first seen with mtime 1723642780.4477658
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\__init__.py first seen with mtime 1723458076.7092736
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loader_tags.py first seen with mtime 1723458077.1777606
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\query.py first seen with mtime 1723458076.8491914
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\log.py first seen with mtime 1723458072.225846
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\html.py first seen with mtime 1723458077.2561307
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\base.py first seen with mtime 1723458076.5981472
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\temp.py first seen with mtime 1723458076.6333196
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\forms.py first seen with mtime 1723458076.9991055
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\policy.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\management\__init__.py first seen with mtime 1723458073.4353755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\filesystem.py first seen with mtime 1723458077.1963325
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\commands\runserver.py first seen with mtime 1723458076.5795383
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\defaults.py first seen with mtime 1723458077.2915218
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\signals.py first seen with mtime 1723458076.851712
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\actions.py first seen with mtime 1723458070.1000824
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\hmac.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_queue.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\urls.py first seen with mtime 1723889266.834278
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\operations.py first seen with mtime 1723458076.7525747
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\tempfile.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\files.py first seen with mtime 1723458076.8557513
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\static.py first seen with mtime 1723458077.2044294
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\__init__.py first seen with mtime 1723458077.2869353
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\tokenize.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\proxy.py first seen with mtime 1723458076.8597522
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\hashable.py first seen with mtime 1723458077.2551315
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\operator.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\__init__.py first seen with mtime 1723458076.163108
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\base.py first seen with mtime 1723458076.6277924
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\client.py first seen with mtime 1723458076.7462175
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\global_settings.py first seen with mtime 1723458069.4149215
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\http.py first seen with mtime 1723458077.2571316
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\calendar.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\state.py first seen with mtime 1723458076.8087504
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\__init__.py first seen with mtime 1723458073.133243
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\__init__.py first seen with mtime 1723458076.6066904
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\__init__.py first seen with mtime 1723458077.2964857
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\__init__.py first seen with mtime 1723458076.6544166
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\termcolors.py first seen with mtime 1723458077.2712028
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\exceptions.py first seen with mtime 1723458076.586583
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\others.py first seen with mtime 1723458068.0283933
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\hashlib.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\_endian.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\async_checks.py first seen with mtime 1723458076.6076944
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\mixins.py first seen with mtime 1723458076.9731412
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\base.py first seen with mtime 1723458076.7442086
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_uuid.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\main.py first seen with mtime 1723458072.2298465
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\utils.py first seen with mtime 1723458076.65642
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\features.py first seen with mtime 1723458076.7313676
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_encoded_words.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\handlers.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_asyncio.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\difflib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\servers\__init__.py first seen with mtime 1723458076.7177813
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\converters.py first seen with mtime 1723642780.4714825
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\base.py first seen with mtime 1723458076.7102664
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\output.py first seen with mtime 1723458068.0283933
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\__init__.py first seen with mtime 1723458076.813311
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dates.py first seen with mtime 1723458077.245581
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\base64mime.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\charset.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\options.py first seen with mtime 1723458076.8481877
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\traceback.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\FIELD_TYPE.py first seen with mtime 1723642780.4881122
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\cache.py first seen with mtime 1723458077.200348
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\color.py first seen with mtime 1723458076.6679611
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\server.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\utils.py first seen with mtime 1723458076.72138
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\__init__.py first seen with mtime 1723458077.1832862
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\numberformat.py first seen with mtime 1723458077.2671974
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\generator.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\utils.py first seen with mtime 1723458076.572526
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\forms.py first seen with mtime 1723458072.6934078
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\text.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\csrf.py first seen with mtime 1723458077.2889564
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_markupbase.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\constants.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\warnings.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\handlers.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\__init__.py first seen with mtime 1723458077.2813084
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\api.py first seen with mtime 1723458074.821632
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\base.py first seen with mtime 1723458076.648861
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_tasks.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\uploadhandler.py first seen with mtime 1723458076.6353188
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\inspect.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\urls.py first seen with mtime 1723458076.6192534
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\indexes.py first seen with mtime 1723458076.8432014
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\tree.py first seen with mtime 1723458077.277319
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\csrf.py first seen with mtime 1723458077.1501174
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\__future__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\manager.py first seen with mtime 1723458076.846189
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\json.py first seen with mtime 1723458076.711282
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\commands\runserver.py first seen with mtime 1723458076.6941073
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\types.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\decorators.py first seen with mtime 1723458077.2475863
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\scanner.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pprint.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\__init__.py first seen with mtime 1723458077.1430953
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\connection.py first seen with mtime 1723458077.23904
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\select.pyd first seen with mtime 1701966964.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\tokens.py first seen with mtime 1723458068.0210874
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\__init__.py first seen with mtime 1723458076.7421923
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\storage\base.py first seen with mtime 1723458074.8321908
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\wintypes.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\log.py first seen with mtime 1723458077.264199
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_ssl.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\app_directories.py first seen with mtime 1723458077.192343
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py first seen with mtime 1723458072.2192934
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\response.py first seen with mtime 1723458077.178745
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\glob.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\socket.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\FLAG.py first seen with mtime 1723642780.4891121
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\functools.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\config.py first seen with mtime 1723458069.4093523
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\base.py first seen with mtime 1723458076.7283697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\model_checks.py first seen with mtime 1723458076.6152537
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\renderers.py first seen with mtime 1723458077.005477
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_casefix.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\messages.py first seen with mtime 1723458076.6132383
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\ipv6.py first seen with mtime 1723458077.260139
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\trans_real.py first seen with mtime 1723458077.2864113
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\widgets.py first seen with mtime 1723458070.1233873
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\importlib\_abc.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pkgutil.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\models.py first seen with mtime 1723458076.8173077
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\argparse.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1723458074.8266568
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\__init__.py first seen with mtime 1723458076.7197976
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\apps.py first seen with mtime 1723458076.5632136
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\converters.py first seen with mtime 1723458077.2244942
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\handlers.py first seen with mtime 1723458076.567213
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\common.py first seen with mtime 1723458077.2984867
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_overlapped.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\locale\__init__.py first seen with mtime 1723458069.4264731
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\utils.py first seen with mtime 1723458076.7263703
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\handler.py first seen with mtime 1723458076.6413207
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\__init__.py first seen with mtime 1723458069.412897
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\signing.py first seen with mtime 1723458076.5896008
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\apps.py first seen with mtime 1723458072.681319
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\uploadedfile.py first seen with mtime 1723458076.6353188
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\__init__.py first seen with mtime 1723458076.968607
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\enums.py first seen with mtime 1723458076.8386648
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\fnmatch.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\mixins.py first seen with mtime 1723458076.643864
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\operations.py first seen with mtime 1723458076.7346601
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\aligned_indent.py first seen with mtime 1723458068.02743
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\__init__.py first seen with mtime 1723458075.7546115
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\tz.py first seen with mtime 1723458077.2054305
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\__init__.py first seen with mtime 1723458076.626784
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related_descriptors.py first seen with mtime 1723458076.9646516
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\sync.py first seen with mtime 1723458069.0528111
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\exceptions.py first seen with mtime 1723458068.0140822
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\forms.py first seen with mtime 1723458073.1412563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\validators.py first seen with mtime 1723458076.5921338
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\lorem_ipsum.py first seen with mtime 1723458077.2661982
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\csrf.py first seen with mtime 1723458077.2994895
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ssl.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\__init__.py first seen with mtime 1723458072.2268462
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\creation.py first seen with mtime 1723458076.7303672
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\apps.py first seen with mtime 1723458073.1362553
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\__init__.py first seen with mtime 1723458076.5971482
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\locmem.py first seen with mtime 1723458076.6026776
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pickle.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\python.py first seen with mtime 1723458076.7147822
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\base.py first seen with mtime 1723458077.166209
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\message.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\base.py first seen with mtime 1723458076.6393173
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\linecache.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_constants.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\models.py first seen with mtime 1723458075.761191
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\registry.py first seen with mtime 1723458069.4113529
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\gzip.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\struct.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\nturl2path.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_weakrefset.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\lzma.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_compression.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\expressions.py first seen with mtime 1723458076.8411765
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\filter_stack.py first seen with mtime 1723458068.0233767
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\__init__.py first seen with mtime 1723458077.2199528
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\debug.py first seen with mtime 1723458077.2899573
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\backends.py first seen with mtime 1723458072.6828942
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\fields.py first seen with mtime 1723458076.816307
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\sites.py first seen with mtime 1723458070.1191678
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\database.py first seen with mtime 1723458076.6112163
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\regex_helper.py first seen with mtime 1723458077.2681956
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\__init__.py first seen with mtime 1723458068.0120697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\__init__.py first seen with mtime 1723458076.5755444
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related_lookups.py first seen with mtime 1723458076.96565
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\security.py first seen with mtime 1723458077.162204
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\token.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\common.py first seen with mtime 1723458077.1491094
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\formats.py first seen with mtime 1723458077.2521145
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ipaddress.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\mimetypes.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\exceptions.py first seen with mtime 1723458077.2255013
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\views.py first seen with mtime 1723889204.6946764
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\boundfield.py first seen with mtime 1723458076.9971032
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\shortcuts.py first seen with mtime 1723458069.4063504
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\datetime.py first seen with mtime 1723458076.9711268
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\__init__.py first seen with mtime 1723458068.022373
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_utils.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\response.py first seen with mtime 1723458077.1420927
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\apps.py first seen with mtime 1723458070.1015904
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\compatibility\django_4_0.py first seen with mtime 1723458076.6217685
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\client.py first seen with mtime 1723458076.729366
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\decorators.py first seen with mtime 1723458072.6923902
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\fields.py first seen with mtime 1723458073.139258
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\__init__.py first seen with mtime 1723458070.097084
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\memory.py first seen with mtime 1723458076.6428485
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\filebased.py first seen with mtime 1723458076.601659
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\asyncio.py first seen with mtime 1723458077.2330258
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\errors.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\bz2.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\models.py first seen with mtime 1723458077.0034785
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1723458075.7641826
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\__init__.py first seen with mtime 1723458076.9781525
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\context.py first seen with mtime 1723458077.1672022
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\numbers.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\response.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\base.py first seen with mtime 1723458072.2248464
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\base.py first seen with mtime 1723458077.3070333
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\__init__.py first seen with mtime 1723458077.1983407
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\creation.py first seen with mtime 1723458076.7482147
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\cookie.py first seen with mtime 1723458077.1375616
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\l10n.py first seen with mtime 1723458077.2034254
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\password_validation.py first seen with mtime 1723458072.702937
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\base.py first seen with mtime 1723458076.8234348
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\__init__.py first seen with mtime 1723458076.6217685
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\crypto.py first seen with mtime 1723458077.2400382
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\platform.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\locale.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\safestring.py first seen with mtime 1723458077.2701988
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\aliases.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\constraints.py first seen with mtime 1723458076.825432
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\__init__.py first seen with mtime 1723458069.4033508
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\introspection.py first seen with mtime 1723458076.7326446
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\management\__init__.py first seen with mtime 1723458073.107646
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\admin.py first seen with mtime 1723458072.6797507
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\asgi.py first seen with mtime 1723458076.6468613
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\__init__.py first seen with mtime 1723458070.0980828
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\contextvars.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\json.py first seen with mtime 1723458076.8577466
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\threading.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\base.py first seen with mtime 1723458076.6237867
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\urls.py first seen with mtime 1723889212.1083035
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\checks.py first seen with mtime 1723458072.6868541
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\string.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\requests.py first seen with mtime 1723458076.1736684
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\constants.py first seen with mtime 1723458076.8244345
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1723458075.7596128
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\__init__.py first seen with mtime 1723458076.722342
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\defaulttags.py first seen with mtime 1723458077.1717181
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\models.py first seen with mtime 1723884449.8416283
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\smartif.py first seen with mtime 1723458077.1797547
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\_os.py first seen with mtime 1723458077.2310145
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\middleware.py first seen with mtime 1723458072.6984057
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\__init__.py first seen with mtime 1723458076.792257
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\exceptions.py first seen with mtime 1723458076.7963014
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\__init__.py first seen with mtime 1723458072.2172904
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\utils.py first seen with mtime 1723458076.63632
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\checks.py first seen with mtime 1723458076.5652146
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\models.py first seen with mtime 1723458072.7014058
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\__init__.py first seen with mtime 1723458076.6448724
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\__init__.py first seen with mtime 1723458076.6373165
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\schema.py first seen with mtime 1723458076.7366633
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\resolvers.py first seen with mtime 1723458077.2264993
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\library.py first seen with mtime 1723458077.1747506
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\selector_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\base_user.py first seen with mtime 1723458072.6838613
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\cli.py first seen with mtime 1723458068.01307
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\base.py first seen with mtime 1723458076.6669636
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\base.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\exceptions.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\utils.py first seen with mtime 1723458076.5961473
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\utils.py first seen with mtime 1723458077.2284997
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\util.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\django.py first seen with mtime 1723458077.185286
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\engine.py first seen with mtime 1723458077.1727326
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_decimal.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1723458075.7586083
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\unicodedata.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\clickjacking.py first seen with mtime 1723458077.1471076
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\keyword.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\templates.py first seen with mtime 1723458076.6172538
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\locks.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\simple_server.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\timezone.py first seen with mtime 1723458077.2763114
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\transports.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\utils.py first seen with mtime 1723458076.8097575
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\encoding.py first seen with mtime 1723458077.249587
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\quopri.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\exception.py first seen with mtime 1723458076.6498616
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1723458075.7661672
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\math.py first seen with mtime 1723458076.972139
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\__init__.py first seen with mtime 1723458076.5951514
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\parse.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\multipart.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\__init__.py first seen with mtime 1723458076.995097
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\module_loading.py first seen with mtime 1723458077.2671974
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\iterators.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\reprlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\checks.py first seen with mtime 1723458073.1382551
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\i18n.py first seen with mtime 1723458077.2924874
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\heapq.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\transaction.py first seen with mtime 1723458076.7197976
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\text.py first seen with mtime 1723458077.2733076
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\timesince.py first seen with mtime 1723458077.2743027
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\bisect.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\move.py first seen with mtime 1723458076.632306
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\admin.py first seen with mtime 1723643035.2459261
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_ctypes.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\message.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\admin.py first seen with mtime 1723458073.135259
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\caches.py first seen with mtime 1723458076.6096957
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\compatibility\__init__.py first seen with mtime 1723458076.620255
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dateparse.py first seen with mtime 1723458077.2435822
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\version.py first seen with mtime 1723458077.279304
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\storage\__init__.py first seen with mtime 1723458074.8311741
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\registry.py first seen with mtime 1723458076.616256
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\keywords.py first seen with mtime 1723458068.0160851
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\exceptions.py first seen with mtime 1723458077.1737494
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\utf_8.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\local.py first seen with mtime 1723458069.048281
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\conf.py first seen with mtime 1723458077.2234957
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\apps.py first seen with mtime 1723458075.7556086
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\__init__.py first seen with mtime 1723458077.3060353
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\dates.py first seen with mtime 1723458077.3080337
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\apps.py first seen with mtime 1723458074.822644
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\lexer.py first seen with mtime 1723458068.0180948
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\base.py first seen with mtime 1723458077.193334
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\images.py first seen with mtime 1723458076.6297832
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\files.py first seen with mtime 1723458076.6122496
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\aggregates.py first seen with mtime 1723458076.8213072
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\getpass.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\__init__.py first seen with mtime 1723458076.5850637
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\settings.py first seen with mtime 1723889171.839861
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\taskgroups.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\cache.py first seen with mtime 1723458077.1461084
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\autoreload.py first seen with mtime 1723458077.165212
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\functional.py first seen with mtime 1723458077.2541327
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\filesystem.py first seen with mtime 1723458076.6403182
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\contextlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\request.py first seen with mtime 1723458077.139563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\utils.py first seen with mtime 1723458074.8296568
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\locks.py first seen with mtime 1723458076.631294
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\exceptions.py first seen with mtime 1723458070.1056182
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_modify.py first seen with mtime 1723458072.2218177
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\__init__.py first seen with mtime 1723458077.1898072
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\uuid.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\coroutines.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\window.py first seen with mtime 1723458076.9771535
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\signals.py first seen with mtime 1723458076.5896008
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\apps.py first seen with mtime 1723458152.3059995
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\checks.py first seen with mtime 1723458070.1026044
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\trsock.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\mixins.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\schema.py first seen with mtime 1723458076.7535768
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\__init__.py first seen with mtime 1723642780.446761
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\csrf.py first seen with mtime 1723458076.6237867
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\tokens.py first seen with mtime 1723458072.704951
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\collections\abc.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\reverse_related.py first seen with mtime 1723458076.9676085
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\options.py first seen with mtime 1723458070.1171741
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\sessions.py first seen with mtime 1723458076.6247864
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\formsets.py first seen with mtime 1723458077.0011055
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\secrets.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\__init__.py first seen with mtime 1723458076.8203044
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\servers\basehttp.py first seen with mtime 1723458076.7187827
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\feedparser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\models.py first seen with mtime 1723458073.1425455
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loader.py first seen with mtime 1723458077.1767507
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\finders.py first seen with mtime 1723458076.5662155
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\signal.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\hashers.py first seen with mtime 1723458072.695405
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\enum.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\edit.py first seen with mtime 1723458077.3115475
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\debug.py first seen with mtime 1723458077.3010833
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pathlib.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\socketserver.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\wsgi.py first seen with mtime 1723458076.6524024
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\__init__.py first seen with mtime 1723642780.4901123
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\dispatch\dispatcher.py first seen with mtime 1723458076.9920976
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\collections\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\selectors.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\validation.py first seen with mtime 1723458076.7545753
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\signals.py first seen with mtime 1723458072.7039495
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\where.py first seen with mtime 1723458076.9895658
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\special.py first seen with mtime 1723458076.818306
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\streams.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\translation.py first seen with mtime 1723458076.618254
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\query_utils.py first seen with mtime 1723458076.8511965
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\list.py first seen with mtime 1723458077.3125622
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\__init__.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\__init__.py first seen with mtime 1723458076.8547552
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\__init__.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\utils.py first seen with mtime 1723458070.1211786
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\shortcuts.py first seen with mtime 1723458076.1746674
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_header_value_parser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\views.py first seen with mtime 1723458073.144559
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\__init__.py first seen with mtime 1723458069.0442812
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\times.py first seen with mtime 1723642780.4815469
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\__init__.py first seen with mtime 1723458152.3397217
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\header.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\fields.py first seen with mtime 1723458076.9981034
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\grouping.py first seen with mtime 1723458068.0243862
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\opcode.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\models.py first seen with mtime 1723458070.1121504
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\textwrap.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_policybase.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\features.py first seen with mtime 1723458076.7502158
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_compiler.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related.py first seen with mtime 1723458076.9615839
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\__init__.py first seen with mtime 1723458077.1642015
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\base.py first seen with mtime 1723458076.8153117
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\queue.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\__init__.py first seen with mtime 1723458076.727367
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\datetime.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\parser.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\queues.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\paginator.py first seen with mtime 1723458076.5875993
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\autoreload.py first seen with mtime 1723458077.2350361
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\utils.py first seen with mtime 1723458077.1797547
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\base.py first seen with mtime 1723458077.2224839
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\nonmultipart.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\duration.py first seen with mtime 1723458077.249587
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\gettext.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\entities.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\datastructures.py first seen with mtime 1723458076.983377
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\defaultfilters.py first seen with mtime 1723458077.1692023
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\signals.py first seen with mtime 1723458076.7243643
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\format_helpers.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\sslproto.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_futures.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\__init__.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\__init__.py first seen with mtime 1723458077.136563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\text.py first seen with mtime 1723458076.9741578
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\ddl_references.py first seen with mtime 1723458076.723351
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\encoders.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\random.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\views.py first seen with mtime 1723458076.5735402
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\decorators.py first seen with mtime 1723458070.1046188
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\deprecation.py first seen with mtime 1723458077.248577
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\headers.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\inspect.py first seen with mtime 1723458077.259133
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_socket.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\__init__.py first seen with mtime 1723458076.5622022
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\contentmanager.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\graphlib.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\weakref.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\formatter.py first seen with mtime 1723458068.0150826
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\right_margin.py first seen with mtime 1723458068.030394
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\helpers.py first seen with mtime 1723458070.1111324
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_parseaddr.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\release.py first seen with mtime 1723642780.4750197
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\utils.py first seen with mtime 1723458068.0210874
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\reindent.py first seen with mtime 1723458068.029387
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\deletion.py first seen with mtime 1723458076.82744
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\base.py first seen with mtime 1723458077.1842878
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\typing.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\_common.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\constants.py first seen with mtime 1723458074.8236606
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\cache.py first seen with mtime 1723458077.2360427
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\__init__.py first seen with mtime 1723458069.4073498
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\error.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\message.py first seen with mtime 1723458076.6554193
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\__init__.py first seen with mtime 1723458076.6659615
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\_virtualenv.py first seen with mtime 1723457314.930683
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\copyreg.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\comparison.py first seen with mtime 1723458076.969618
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\log.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\datastructures.py first seen with mtime 1723458077.2410386
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\cache.py first seen with mtime 1723458077.297485
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1723458073.116171
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1723458073.117171
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\recorder.py first seen with mtime 1723458076.8057513
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1723458073.439378
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1723458071.9502199
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\cursors.py first seen with mtime 1723642780.474061
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1723458073.122699
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\0001_initial.py first seen with mtime 1723711815.2408292
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1723458073.1237123
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\idna.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\stringprep.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1723458076.1525557
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1723458073.126714
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1723458075.7691636
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1723458071.9522953
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\__init__.py first seen with mtime 1723458152.3437293
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1723458073.1201715
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1723458071.9532833
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\executor.py first seen with mtime 1723458076.797305
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1723458073.1131732
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1723458073.1277142
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\loader.py first seen with mtime 1723458076.8003075
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\wsgi.py first seen with mtime 1723457866.083177
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1723458073.1191697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1723458073.124711
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\connections.py first seen with mtime 1723642780.4705372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\graph.py first seen with mtime 1723458076.798304
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1723458073.1141765
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1723458076.1515381
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1723458073.125712
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\compiler.py first seen with mtime 1723458076.7472172
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1723458071.9512198
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\compiler.py first seen with mtime 1723458076.9811523
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1723458073.440372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1723458073.440372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1723458073.1211755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\0002_user_email.py first seen with mtime 1723884455.0864549
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+(0.109) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'admin' AND `django_content_type`.`model` IN ('logentry')); args=('admin', 'logentry'); alias=default
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` IN ('permission', 'group', 'user')); args=('auth', 'permission', 'group', 'user'); alias=default
+(0.015) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'contenttypes' AND `django_content_type`.`model` IN ('contenttype')); args=('contenttypes', 'contenttype'); alias=default
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'sessions' AND `django_content_type`.`model` IN ('session')); args=('sessions', 'session'); alias=default
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+(0.015) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'authentication'; args=('authentication',); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'authentication' AND `django_content_type`.`model` IN ('user')); args=('authentication', 'user'); alias=default
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,); alias=default
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'authentication'; args=('authentication',); alias=default
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\locale with glob **/*.mo.
+Watching dir F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\locale with glob **/*.mo.
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\storage\base.py first seen with mtime 1723458074.8321908
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\__init__.py first seen with mtime 1723458076.968607
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\__init__.py first seen with mtime 1723458076.6066904
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\decimal.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\admin.py first seen with mtime 1723643035.2459261
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\log.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\commands\__init__.py first seen with mtime 1723458076.6735077
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\ipv6.py first seen with mtime 1723458077.260139
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\security.py first seen with mtime 1723458077.162204
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\release.py first seen with mtime 1723642780.4750197
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\special.py first seen with mtime 1723458076.818306
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\__init__.py first seen with mtime 1723458077.1642015
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\signals.py first seen with mtime 1723458076.7243643
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\glob.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\__init__.py first seen with mtime 1723458076.7197976
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\urls\__init__.py first seen with mtime 1723458070.0930927
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\signals.py first seen with mtime 1723458076.5896008
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\base.py first seen with mtime 1723458077.193334
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\state.py first seen with mtime 1723458076.8087504
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\utils.py first seen with mtime 1723458076.7263703
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\models.py first seen with mtime 1723458070.1121504
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\_mysql.cp312-win_amd64.pyd first seen with mtime 1723642780.4562802
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\client.py first seen with mtime 1723458076.729366
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\manager.py first seen with mtime 1723458076.846189
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\format_helpers.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related_lookups.py first seen with mtime 1723458076.96565
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_constants.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\__init__.py first seen with mtime 1723458068.026395
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\defaults.py first seen with mtime 1723458077.2915218
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\constants.py first seen with mtime 1723458076.9823647
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\operator.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_parseaddr.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\views.py first seen with mtime 1723458072.708953
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\uploadedfile.py first seen with mtime 1723458076.6353188
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\api.py first seen with mtime 1723458074.821632
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\validators.py first seen with mtime 1723458076.5921338
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\cache.py first seen with mtime 1723458077.2360427
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\times.py first seen with mtime 1723642780.4815469
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\messages.py first seen with mtime 1723458076.6132383
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\hmac.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\caches.py first seen with mtime 1723458076.6096957
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\locale.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\reindent.py first seen with mtime 1723458068.029387
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_modify.py first seen with mtime 1723458072.2218177
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\sysconfig.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\where.py first seen with mtime 1723458076.9895658
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\views.py first seen with mtime 1723889204.6946764
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_weakrefset.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_markupbase.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\csrf.py first seen with mtime 1723458077.2994895
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\ddl_references.py first seen with mtime 1723458076.723351
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\filesystem.py first seen with mtime 1723458077.1963325
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\utils.py first seen with mtime 1723458076.5961473
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pickle.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\password_validation.py first seen with mtime 1723458072.702937
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\datastructures.py first seen with mtime 1723458076.983377
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\server.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\__init__.py first seen with mtime 1723458074.8201144
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\base.py first seen with mtime 1723458076.6237867
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\inspect.py first seen with mtime 1723458077.259133
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\base.py first seen with mtime 1723458077.3070333
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\utils.py first seen with mtime 1723458076.63632
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\base.py first seen with mtime 1723458076.7283697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\utils.py first seen with mtime 1723458076.72138
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\base.py first seen with mtime 1723458076.7102664
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\formsets.py first seen with mtime 1723458077.0011055
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related_descriptors.py first seen with mtime 1723458076.9646516
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\__init__.py first seen with mtime 1723458072.67775
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\signals.py first seen with mtime 1723458072.7039495
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\autoreload.py first seen with mtime 1723458077.165212
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\__init__.py first seen with mtime 1723458076.5755444
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\debug.py first seen with mtime 1723458077.3010833
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_ssl.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\__init__.py first seen with mtime 1723458076.9781525
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\reprlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\__init__.py first seen with mtime 1723458077.1898072
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\unicodedata.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\apps.py first seen with mtime 1723458070.1015904
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1723458074.8266568
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\__init__.py first seen with mtime 1723458077.2869353
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\color.py first seen with mtime 1723458076.6679611
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\__init__.py first seen with mtime 1723458077.1983407
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\_os.py first seen with mtime 1723458077.2310145
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\__init__.py first seen with mtime 1723458076.6448724
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\__init__.py first seen with mtime 1723458076.5622022
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\converters.py first seen with mtime 1723642780.4714825
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\__init__.py first seen with mtime 1723458075.7546115
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\iterators.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\urls.py first seen with mtime 1723889212.1083035
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\model_checks.py first seen with mtime 1723458076.6152537
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_uuid.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\introspection.py first seen with mtime 1723458076.7326446
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_casefix.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\utils.py first seen with mtime 1723458076.8097575
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_asyncio.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\options.py first seen with mtime 1723458076.8481877
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\servers\basehttp.py first seen with mtime 1723458076.7187827
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\move.py first seen with mtime 1723458076.632306
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\tokenize.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\management\__init__.py first seen with mtime 1723458073.4353755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1723458075.7641826
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\python.py first seen with mtime 1723458076.7147822
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\right_margin.py first seen with mtime 1723458068.030394
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\__init__.py first seen with mtime 1723458076.8547552
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\functional.py first seen with mtime 1723458077.2541327
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\message.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\apps.py first seen with mtime 1723458075.7556086
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\string.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_compat_pickle.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\error.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\inspect.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\protocols.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\schema.py first seen with mtime 1723458076.7535768
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\connection.py first seen with mtime 1723458077.23904
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\grouping.py first seen with mtime 1723458068.0243862
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\checks.py first seen with mtime 1723458076.5652146
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_tasks.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\sync.py first seen with mtime 1723458069.0528111
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\query_utils.py first seen with mtime 1723458076.8511965
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\operations.py first seen with mtime 1723458076.7525747
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loader_tags.py first seen with mtime 1723458077.1777606
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\socket.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\__init__.py first seen with mtime 1723458069.0442812
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\paginator.py first seen with mtime 1723458076.5875993
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\cli.py first seen with mtime 1723458068.01307
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\linecache.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\response.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\engine.py first seen with mtime 1723458077.1727326
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\keywords.py first seen with mtime 1723458068.0160851
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\library.py first seen with mtime 1723458077.1747506
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\text.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\__init__.py first seen with mtime 1723458077.2199528
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\selector_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\views.py first seen with mtime 1723458073.144559
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\socketserver.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\warnings.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\gettext.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\signal.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\widgets.py first seen with mtime 1723458077.0084803
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\random.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\lexer.py first seen with mtime 1723458068.0180948
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dateparse.py first seen with mtime 1723458077.2435822
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\heapq.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\__init__.py first seen with mtime 1723458077.2964857
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\base64mime.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\header.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\translation.py first seen with mtime 1723458076.618254
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\types.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\migration.py first seen with mtime 1723458076.8013036
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\threading.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\operations.py first seen with mtime 1723458076.7346601
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\exceptions.py first seen with mtime 1723458070.1056182
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py first seen with mtime 1723458072.2192934
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\getpass.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\dispatch\__init__.py first seen with mtime 1723458076.9911628
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\__init__.py first seen with mtime 1723458076.7421923
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\__init__.py first seen with mtime 1723458076.727367
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\cache.py first seen with mtime 1723458077.1461084
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\fields.py first seen with mtime 1723458073.139258
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\charset.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\dataclasses.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\struct.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\locmem.py first seen with mtime 1723458076.6026776
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\utils.py first seen with mtime 1723458068.0210874
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\mixins.py first seen with mtime 1723458076.858755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\apps.py first seen with mtime 1723458073.1362553
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\forms.py first seen with mtime 1723458076.9991055
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\__init__.py first seen with mtime 1723458076.6217685
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\urls.py first seen with mtime 1723889266.834278
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\autoreload.py first seen with mtime 1723458077.2350361
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\fnmatch.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\schema.py first seen with mtime 1723458076.7366633
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\_exceptions.py first seen with mtime 1723642780.4477658
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\base_user.py first seen with mtime 1723458072.6838613
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\models.py first seen with mtime 1723458077.0034785
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\cache.py first seen with mtime 1723458077.297485
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\sessions.py first seen with mtime 1723458076.6247864
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\encoding.py first seen with mtime 1723458077.249587
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\nturl2path.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\requests.py first seen with mtime 1723458076.1736684
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\sslproto.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\__init__.py first seen with mtime 1723458076.8203044
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\feedparser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\base.py first seen with mtime 1723458076.6277924
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\streams.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\quoprimime.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\resolvers.py first seen with mtime 1723458077.2264993
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_policybase.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\_tzpath.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1723458075.7586083
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\traceback.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\base_session.py first seen with mtime 1723458075.7566094
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\__init__.py first seen with mtime 1723458070.097084
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\mixins.py first seen with mtime 1723458076.643864
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\response.py first seen with mtime 1723458077.178745
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\cookies.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\database.py first seen with mtime 1723458076.6112163
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\cache.py first seen with mtime 1723458077.200348
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_futures.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\__init__.py first seen with mtime 1723458076.5971482
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\storage\__init__.py first seen with mtime 1723458074.8311741
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\base.py first seen with mtime 1723458077.2224839
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\trsock.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\__init__.py first seen with mtime 1723458076.626784
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\debug.py first seen with mtime 1723458077.2899573
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\signing.py first seen with mtime 1723458076.5896008
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\gzip.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\cookie.py first seen with mtime 1723458077.1375616
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\crypto.py first seen with mtime 1723458077.2400382
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\django.py first seen with mtime 1723458077.185286
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\middleware.py first seen with mtime 1723458072.6984057
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\__init__.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\uploadhandler.py first seen with mtime 1723458076.6353188
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\_virtualenv.py first seen with mtime 1723457314.930683
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\views.py first seen with mtime 1723458076.5735402
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\_compression.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\management\__init__.py first seen with mtime 1723458073.107646
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_ctypes.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\handler.py first seen with mtime 1723458076.6413207
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\urls.py first seen with mtime 1723458076.6192534
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\features.py first seen with mtime 1723458076.7502158
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\datastructures.py first seen with mtime 1723458077.2410386
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\apps.py first seen with mtime 1723458152.3059995
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\lzma.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\models.py first seen with mtime 1723458072.7014058
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\commands\runserver.py first seen with mtime 1723458076.5795383
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\functools.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\subqueries.py first seen with mtime 1723458076.986377
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ipaddress.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\decorators\common.py first seen with mtime 1723458077.2984867
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\fields.py first seen with mtime 1723458076.816307
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\base.py first seen with mtime 1723458076.5981472
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\models.py first seen with mtime 1723884449.8416283
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\wsgi.py first seen with mtime 1723458076.6524024
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\forms.py first seen with mtime 1723458072.6934078
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\bisect.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\__init__.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\loader.py first seen with mtime 1723458076.8003075
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\context.py first seen with mtime 1723458077.1672022
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\statement_splitter.py first seen with mtime 1723458068.0253913
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\exceptions.py first seen with mtime 1723458076.7963014
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\termcolors.py first seen with mtime 1723458077.2712028
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\nonmultipart.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\output.py first seen with mtime 1723458068.0283933
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\copy.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\app_directories.py first seen with mtime 1723458077.192343
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_queue.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\base.py first seen with mtime 1723458076.6393173
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\validators.py first seen with mtime 1723458072.7069519
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pathlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\checks.py first seen with mtime 1723458070.1026044
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\numbers.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\creation.py first seen with mtime 1723458076.7482147
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\concurrent\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_encoded_words.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\secrets.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\tokens.py first seen with mtime 1723458068.0210874
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\scanner.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\__init__.py first seen with mtime 1723458077.229501
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\exception.py first seen with mtime 1723458076.6498616
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\generated.py first seen with mtime 1723458076.8567507
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\exceptions.py first seen with mtime 1723458077.2255013
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\local.py first seen with mtime 1723458069.048281
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\select.pyd first seen with mtime 1701966964.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\__init__.py first seen with mtime 1723458076.6544166
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\utf_8.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\tz.py first seen with mtime 1723458077.2054305
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\utils.py first seen with mtime 1723458077.0064747
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\base.py first seen with mtime 1723458076.648861
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\taskgroups.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\__init__.py first seen with mtime 1723458076.6373165
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\__init__.py first seen with mtime 1723458077.2813084
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\parser.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\entities.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\__init__.py first seen with mtime 1723458072.2172904
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\keyword.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\__init__.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_bz2.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\constants.py first seen with mtime 1723458076.8244345
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_utils.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\text.py first seen with mtime 1723458077.2733076
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\importlib\_abc.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\registry.py first seen with mtime 1723458076.616256
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\executor.py first seen with mtime 1723458076.797305
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1723458075.7661672
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\decorators.py first seen with mtime 1723458070.1046188
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\__init__.py first seen with mtime 1723458076.5850637
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\forms.py first seen with mtime 1723458073.1412563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\compatibility\__init__.py first seen with mtime 1723458076.620255
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\settings.py first seen with mtime 1723889171.839861
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\tree.py first seen with mtime 1723458077.277319
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\base.py first seen with mtime 1723458072.2248464
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\quopri.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\__init__.py first seen with mtime 1723642780.4901123
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\utils.py first seen with mtime 1723458076.65642
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\admin.py first seen with mtime 1723458073.135259
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\textwrap.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\json.py first seen with mtime 1723458076.8577466
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\templates.py first seen with mtime 1723458076.6172538
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\http.py first seen with mtime 1723458077.2571316
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\mail\message.py first seen with mtime 1723458076.6554193
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\actions.py first seen with mtime 1723458070.1000824
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\hashlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\duration.py first seen with mtime 1723458077.249587
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\defaulttags.py first seen with mtime 1723458077.1717181
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\base.py first seen with mtime 1723458076.7442086
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\conf.py first seen with mtime 1723458077.2234957
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\transports.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\coroutines.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\contentmanager.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\i18n.py first seen with mtime 1723458077.201343
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\trans_real.py first seen with mtime 1723458077.2864113
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\__init__.py first seen with mtime 1723458077.3060353
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\deletion.py first seen with mtime 1723458076.82744
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\collections\__init__.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\version.py first seen with mtime 1723458077.279304
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\__init__.py first seen with mtime 1723458077.1832862
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\decorators.py first seen with mtime 1723458072.6923902
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\filesystem.py first seen with mtime 1723458076.6403182
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\__init__.py first seen with mtime 1723458068.0120697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\models.py first seen with mtime 1723458075.761191
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_overlapped.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\i18n.py first seen with mtime 1723458077.2924874
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\admin_urls.py first seen with mtime 1723458072.222834
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\introspection.py first seen with mtime 1723458076.7512145
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\weakref.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\zoneinfo\_common.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\generator.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\utils.py first seen with mtime 1723458070.1211786
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\validation.py first seen with mtime 1723458076.7545753
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\html.py first seen with mtime 1723458077.2561307
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\response.py first seen with mtime 1723458077.1420927
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\utils.py first seen with mtime 1723458076.8527324
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\backends.py first seen with mtime 1723458072.6828942
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\platform.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\__init__.py first seen with mtime 1723458077.136563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\__init__.py first seen with mtime 1723458072.2268462
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\config.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ssl.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\simple_server.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\files.py first seen with mtime 1723458076.8557513
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\compatibility\django_4_0.py first seen with mtime 1723458076.6217685
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\difflib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\boundfield.py first seen with mtime 1723458076.9971032
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_socket.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\related.py first seen with mtime 1723458076.9615839
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\handlers.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\clickjacking.py first seen with mtime 1723458077.1471076
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\sql.py first seen with mtime 1723458068.0190897
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\__init__.py first seen with mtime 1723458076.813311
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\__init__.py first seen with mtime 1723458076.5951514
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\translation\reloader.py first seen with mtime 1723458077.28341
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\__init__.py first seen with mtime 1723458152.3397217
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\static.py first seen with mtime 1723458077.2044294
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\fields.py first seen with mtime 1723458076.9981034
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\csrf.py first seen with mtime 1723458077.2889564
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\commands\runserver.py first seen with mtime 1723458076.6941073
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\base.py first seen with mtime 1723458076.8153117
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pprint.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\models.py first seen with mtime 1723458073.1425455
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1723458075.7596128
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\reverse_related.py first seen with mtime 1723458076.9676085
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\argparse.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\detail.py first seen with mtime 1723458077.310035
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\filter_stack.py first seen with mtime 1723458068.0233767
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\multipart.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\headers.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\base64.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\decorators.py first seen with mtime 1723458077.2475863
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\comparison.py first seen with mtime 1723458076.969618
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\autocomplete.py first seen with mtime 1723458072.227845
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\dispatch\dispatcher.py first seen with mtime 1723458076.9920976
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\finders.py first seen with mtime 1723458076.5662155
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\utils.py first seen with mtime 1723458076.572526
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\constraints.py first seen with mtime 1723458076.825432
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\filters.py first seen with mtime 1723458070.1086164
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\token.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\asyncio.py first seen with mtime 1723458077.2330258
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\safestring.py first seen with mtime 1723458077.2701988
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\bz2.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\handlers\asgi.py first seen with mtime 1723458076.6468613
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\__init__.py first seen with mtime 1723458069.4073498
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_compiler.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\checks.py first seen with mtime 1723458072.6868541
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\edit.py first seen with mtime 1723458077.3115475
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\queues.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\uuid.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\enum.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\__init__.py first seen with mtime 1723642780.446761
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\exceptions.py first seen with mtime 1723458076.586583
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\query.py first seen with mtime 1723458076.986377
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\locale\__init__.py first seen with mtime 1723458069.4264731
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\errors.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\window.py first seen with mtime 1723458076.9771535
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\utils.py first seen with mtime 1723458074.8296568
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\hashable.py first seen with mtime 1723458077.2551315
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\lookups.py first seen with mtime 1723458076.8441906
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\handlers.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\datetime.py first seen with mtime 1723458076.9711268
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\__init__.py first seen with mtime 1723458069.4033508
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\engine\__init__.py first seen with mtime 1723458068.022373
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\_header_value_parser.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\dis.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\base.py first seen with mtime 1723458076.8234348
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\base.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\__init__.py first seen with mtime 1723458069.412897
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\storage\memory.py first seen with mtime 1723458076.6428485
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\expressions.py first seen with mtime 1723458076.8411765
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loaders\cached.py first seen with mtime 1723458077.194335
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_lzma.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\query.py first seen with mtime 1723458076.8491914
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dates.py first seen with mtime 1723458077.245581
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\client.py first seen with mtime 1723458076.7462175
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\__init__.py first seen with mtime 1723457866.083177
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\mimetypes.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\multipartparser.py first seen with mtime 1723458077.139563
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\cache\backends\filebased.py first seen with mtime 1723458076.601659
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\http\client.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\graphlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\log.py first seen with mtime 1723458077.264199
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\exceptions.py first seen with mtime 1723458077.1737494
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\copyreg.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\mixins.py first seen with mtime 1723458076.9731412
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\__init__.py first seen with mtime 1723458076.722342
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\tempfile.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\module_loading.py first seen with mtime 1723458077.2671974
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\images.py first seen with mtime 1723458076.6297832
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\_endian.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\formatter.py first seen with mtime 1723458068.0150826
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\__init__.py first seen with mtime 1723458077.1430953
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\csrf.py first seen with mtime 1723458077.1501174
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\sites.py first seen with mtime 1723458070.1191678
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\tokens.py first seen with mtime 1723458068.0313878
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\FLAG.py first seen with mtime 1723642780.4891121
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\exceptions.py first seen with mtime 1723458068.0140822
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\staggered.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\__init__.py first seen with mtime 1723458076.6659615
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\features.py first seen with mtime 1723458076.7313676
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\templatetags\l10n.py first seen with mtime 1723458077.2034254
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\hashers.py first seen with mtime 1723458072.695405
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\subprocess.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\utils.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\pkgutil.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\management\base.py first seen with mtime 1723458076.6669636
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\transaction.py first seen with mtime 1723458076.7197976
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\views\main.py first seen with mtime 1723458072.2298465
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\conf\global_settings.py first seen with mtime 1723458069.4149215
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\apps.py first seen with mtime 1723458074.822644
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\shortcuts.py first seen with mtime 1723458076.1746674
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\operations\models.py first seen with mtime 1723458076.8173077
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\calendar.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\indexes.py first seen with mtime 1723458076.8432014
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\__init__.py first seen with mtime 1723458073.133243
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\signals.py first seen with mtime 1723458076.851712
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\static.py first seen with mtime 1723458077.2944856
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\security\csrf.py first seen with mtime 1723458076.6237867
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\numberformat.py first seen with mtime 1723458077.2671974
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\datetime.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\handlers.py first seen with mtime 1723458076.567213
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\utils.py first seen with mtime 1723458077.1797547
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\servers\__init__.py first seen with mtime 1723458076.7177813
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\loader.py first seen with mtime 1723458077.1767507
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\converters.py first seen with mtime 1723458077.2244942
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\html\parser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\deprecation.py first seen with mtime 1723458077.248577
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\async_checks.py first seen with mtime 1723458076.6076944
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\shutil.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\timezone.py first seen with mtime 1723458077.2763114
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\checks.py first seen with mtime 1723458073.1382551
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\backends\base.py first seen with mtime 1723458077.1842878
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\messages\constants.py first seen with mtime 1723458074.8236606
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\widgets.py first seen with mtime 1723458070.1233873
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\formats.py first seen with mtime 1723458077.2521145
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_wmi.pyd first seen with mtime 1701966966.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\exceptions.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\wsgiref\util.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\collections\abc.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\headerregistry.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\http\request.py first seen with mtime 1723458077.139563
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\parse.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\opcode.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\apps.py first seen with mtime 1723458076.5632136
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\__future__.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\mixins.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\shortcuts.py first seen with mtime 1723458069.4063504
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\manage.py first seen with mtime 1723457866.0091364
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\encoders.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\regex_helper.py first seen with mtime 1723458077.2681956
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_decimal.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\options.py first seen with mtime 1723458070.1171741
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\aggregates.py first seen with mtime 1723458076.8213072
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\registry.py first seen with mtime 1723458069.4113529
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\__init__.py first seen with mtime 1723458070.0980828
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\choices.py first seen with mtime 1723458077.2380395
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\dateformat.py first seen with mtime 1723458077.241549
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\tokens.py first seen with mtime 1723458072.704951
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\checks\files.py first seen with mtime 1723458076.6122496
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\CLIENT.py first seen with mtime 1723642780.4825735
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\contextvars.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\admin.py first seen with mtime 1723458072.6797507
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_hashlib.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\__init__.py first seen with mtime 1723458076.995097
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\middleware\common.py first seen with mtime 1723458077.1491094
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\constants\FIELD_TYPE.py first seen with mtime 1723642780.4881122
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\mime\message.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\base.py first seen with mtime 1723458077.166209
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\smartif.py first seen with mtime 1723458077.1797547
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\aliases.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\helpers.py first seen with mtime 1723458070.1111324
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\lorem_ipsum.py first seen with mtime 1723458077.2661982
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\locks.py first seen with mtime 1723458076.631294
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\files\temp.py first seen with mtime 1723458076.6333196
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\selectors.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\others.py first seen with mtime 1723458068.0283933
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\staticfiles\management\commands\__init__.py first seen with mtime 1723458076.5765424
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\apps.py first seen with mtime 1723458072.681319
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\typing.py first seen with mtime 1701966916.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\fields\proxy.py first seen with mtime 1723458076.8597522
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\list.py first seen with mtime 1723458077.3125622
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py first seen with mtime 1701966916.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\validation.py first seen with mtime 1723458076.7376583
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\text.py first seen with mtime 1723458076.9741578
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\json.py first seen with mtime 1723458076.711282
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\asgiref\current_thread_executor.py first seen with mtime 1723458069.0472748
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\apps\config.py first seen with mtime 1723458069.4093523
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sites\__init__.py first seen with mtime 1723458076.163108
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\urls\utils.py first seen with mtime 1723458077.2284997
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\DLLs\_zoneinfo.pyd first seen with mtime 1701966966.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\wsgi.py first seen with mtime 1723458076.59415
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ast.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\enums.py first seen with mtime 1723458076.8386648
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\views\generic\dates.py first seen with mtime 1723458077.3080337
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\queue.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\template\defaultfilters.py first seen with mtime 1723458077.1692023
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\contextlib.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\core\serializers\__init__.py first seen with mtime 1723458076.7092736
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\sqlparse\filters\aligned_indent.py first seen with mtime 1723458068.02743
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\__init__.py first seen with mtime 1723458076.792257
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\constants.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\base\creation.py first seen with mtime 1723458076.7303672
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\timesince.py first seen with mtime 1723458077.2743027
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\email\policy.py first seen with mtime 1701966914.0
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\ctypes\wintypes.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\forms\renderers.py first seen with mtime 1723458077.005477
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\utils\deconstruct.py first seen with mtime 1723458077.2465794
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\functions\math.py first seen with mtime 1723458076.972139
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\asyncio\locks.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\templatetags\log.py first seen with mtime 1723458072.225846
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1723458071.9532833
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\0001_initial.py first seen with mtime 1723711815.2408292
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\stringprep.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\0002_user_email.py first seen with mtime 1723884455.0864549
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1723458076.1525557
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1723458073.1141765
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1723458073.117171
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1723458073.1277142
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1723458073.439378
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1723458073.124711
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1723458073.122699
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1723458073.1201715
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\cursors.py first seen with mtime 1723642780.474061
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1723458071.9512198
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1723458073.440372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1723458075.7691636
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1723458073.125712
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\backends\mysql\compiler.py first seen with mtime 1723458076.7472172
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1723458073.440372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\recorder.py first seen with mtime 1723458076.8057513
+File C:\Users\amane chor\AppData\Local\Programs\Python\Python312\Lib\encodings\idna.py first seen with mtime 1701966914.0
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1723458073.116171
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1723458076.1515381
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1723458073.1131732
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\Chess_Backend\wsgi.py first seen with mtime 1723457866.083177
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1723458071.9522953
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1723458073.1237123
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1723458071.9502199
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1723458073.126714
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\MySQLdb\connections.py first seen with mtime 1723642780.4705372
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\Chess_Backend\authentication\migrations\__init__.py first seen with mtime 1723458152.3437293
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\migrations\graph.py first seen with mtime 1723458076.798304
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1723458073.1191697
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1723458073.1211755
+File F:\8th sem\Project III\Chess-game_ChessPark-ai\backend\env\Lib\site-packages\django\db\models\sql\compiler.py first seen with mtime 1723458076.9811523
