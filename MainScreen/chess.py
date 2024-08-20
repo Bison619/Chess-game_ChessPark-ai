@@ -8,12 +8,12 @@ from setting import Config, sounds
 from tools import Position, OnBoard
 from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
-from ui import Button
+from ui import TextUI
 import ui
 from AI.ChessAI import Minimax
 
 class Chess:
-    def __init__(self, screen, ai_depth=1):
+    def __init__(self, screen, ai_depth=1, time_control=None):
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.board = Board()
@@ -38,11 +38,23 @@ class Chess:
         self.player_turn = 0
         self.current_save_slot = 1
         self.placeholder_player_turn = self.player_turn
+
         # for button
         button_y_start = Config.height // 2 - 60
         button_spacing = 110
         self.Save = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3 * button_spacing, 200, 60, "Save Game")
         self.Resign = ui.Button(screen, Config.width // 2 + 580, button_y_start + 3.8 * button_spacing, 200, 60, "Resign Game")
+
+        # for time display and management
+        self.time_control = time_control
+        self.white_time = 0
+        self.black_time = 0
+        self.last_move_time = 0
+
+        if time_control:
+            self.white_time = time_control['initial'] * 60  # to convert to seconds
+            self.black_time = time_control['initial'] * 60
+
 
 
 
@@ -68,15 +80,20 @@ class Chess:
     def vsPlayer(self):
         pygame.event.clear()
         sounds.game_start_sound.play()
+        self.last_move_time = time.time()
         while not self.gameOver:
             self.clock.tick(Config.fps)
             self.background = pygame.image.load("./assets/images/mainbg2blur.png")
             self.getMousePosition()
             pygame.display.set_caption("Chess : VS Player " + str(int(self.GetFrameRate())))
+            if self.time_control:
+                self.update_time()
             self.display()
             if self.animateSpot >= Config.spotSize:
                 self.HandleEvents()
             self.IsGameOver()
+            if self.check_time_out():
+                self.IsGameOver()
 
     def set_ai_depth(self, depth):
         self.ComputerAI = Minimax(depth, self.board, True, True)
@@ -142,6 +159,7 @@ class Chess:
                     self.board.Move(self.selectedPiece, self.AdjustedMouse)
                     # play sound
                     sounds.move_sound.play()
+
                 self.ReleasePiece()
             elif self.CanBeReleased:
                 self.ReleasePiece()
@@ -217,6 +235,7 @@ class Chess:
         self.drawCapturedPieces()
         self.Save.Draw()
         self.Resign.Draw()
+        self.drawTimer()
 
     def DrawChessBoard(self):
         if self.animateSpot < Config.spotSize:
@@ -444,6 +463,75 @@ class Chess:
         with open(save_path, 'w') as f:
             json.dump(game_state, f)
         print("All save slots were full. Overwrote save slot 1.")
+
+
+    def update_time(self):
+        if self.time_control:
+            current_time = time.time()
+            if self.last_move_time:
+                elapsed = current_time - self.last_move_time
+                if self.board.player == 0:  # White's turn
+                    self.white_time -= elapsed
+                else:
+                    self.black_time -= elapsed
+            self.last_move_time = current_time
+
+    def check_time_out(self):
+        if self.time_control:
+            if self.white_time <= 0:
+                self.board.winner = 1  # Black wins
+                return True
+            elif self.black_time <= 0:
+                self.board.winner = 0  # White wins
+                return True
+        return False
+
+    def drawTimer(self):
+        if self.time_control:
+            white_time_str = time.strftime("%M:%S", time.gmtime(max(0, self.white_time)))
+            black_time_str = time.strftime("%M:%S", time.gmtime(max(0, self.black_time)))
+
+            font = pygame.font.Font('assets/font/Roboto-Bold.ttf', 38)  # Font size
+
+            # Render timer texts
+            black_timer = font.render(f"{black_time_str}", True,  (255, 255, 255))
+            white_timer = font.render(f"{white_time_str}", True, (0, 0, 0))
+
+            # Get the width and height of the timer text to size the rectangles perfectly
+            black_timer_rect = black_timer.get_rect()
+            white_timer_rect = white_timer.get_rect()
+
+            # Position the timers on the screen
+            timer_x = 80  # Horizontal position
+            black_timer_y = Config.height // 3
+            white_timer_y = (Config.height * 2) // 3
+
+
+            padding = 10
+            black_rect_width = black_timer_rect.width + 20 + padding * 2
+            black_rect_height = black_timer_rect.height + padding * 2
+
+            white_rect_width = white_timer_rect.width + 20 + padding * 2
+            white_rect_height = white_timer_rect.height + padding * 2
+
+            # Draw background rectangles for better visibility
+            pygame.draw.rect(self.screen, (0, 0, 0),
+                            (timer_x - padding, black_timer_y - black_rect_height // 2,
+                            black_rect_width + 15, black_rect_height), border_radius=10)
+            pygame.draw.rect(self.screen, (255, 255, 255),
+                            (timer_x - padding, white_timer_y - white_rect_height // 2,
+                            white_rect_width + 15, white_rect_height), border_radius=10)
+
+            # Center the timer text within the rectangles
+            black_timer_center = (timer_x + black_rect_width // 2 - black_timer_rect.width // 2,
+                                black_timer_y - black_timer_rect.height // 2)
+            white_timer_center = (timer_x + white_rect_width // 2 - white_timer_rect.width // 2,
+                                white_timer_y - white_timer_rect.height // 2)
+
+            # Blit timers to the screen
+            self.screen.blit(black_timer, black_timer_center)
+            self.screen.blit(white_timer, white_timer_center)
+
 
     def gameOverWindow(self):
         if self.board.winner >= 0:
