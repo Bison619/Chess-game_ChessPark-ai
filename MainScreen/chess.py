@@ -8,7 +8,6 @@ from setting import Config, sounds
 from tools import Position, OnBoard
 from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
-from ui import TextUI
 import ui
 from AI.ChessAI import Minimax
 

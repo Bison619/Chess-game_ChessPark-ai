@@ -4,7 +4,7 @@ from setting import Config,sounds
 from MainScreen.chess import Chess
 from MainScreen.fadeeffect import fade_in,fade_out
 from MainScreen.login_screen import LoginScreen
-import requests
+from MainScreen.background import Background
 
 # for back-ground music
 pygame.mixer.music.load(os.path.join('assets/sounds/bg space music.mp3'))
@@ -35,6 +35,7 @@ class Menu:
         self.running = True
         self.clock = pygame.time.Clock()
         self.chess = Chess(screen)
+        self.sakura_background = Background(screen)
 
     def DrawButtons(self):
         self.Play.Draw()
@@ -90,9 +91,12 @@ class Menu:
                             return next_screen
 
             # display background image
+
             self.screen.blit(self.background, (0, 0))
             # for logo
+            self.sakura_background.draw()
             self.screen.blit(self.title_image, self.title_image_rect.topleft)
             self.DrawButtons()
+
             # update screen
             pygame.display.update()
