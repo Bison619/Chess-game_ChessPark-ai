@@ -1,77 +1,88 @@
 import pygame
-import requests
-import json
+import ui
+from setting import Config, sounds
+
 
 class LoginScreen:
-    def __init__(self, screen):
+    def __init__(self, screen, is_register=False):
         self.screen = screen
-        self.font = pygame.font.Font(None, 32)
-        self.clock = pygame.time.Clock()
-        self.input_box = pygame.Rect(100, 100, 140, 32)
-        self.active = False
-        self.text = ''
-        self.done = False
+        self.is_register = is_register
+        self.background = pygame.image.load("./assets/images/mainbg2frame.png")
+        self.background = pygame.transform.smoothscale(self.background, Config.resolution)
 
-    def get_input(self, prompt):
-        input_box = pygame.Rect(100, 100, 140, 32)
-        active = False
-        text = ''
-        done = False
+        # Adjust the positions to create more space between input boxes and buttons
+        input_y_start = Config.height // 2 - 75
+        input_spacing = 50
 
-        while not done:
+        self.username_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start, 200, 28, "")
+        self.password_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start + input_spacing * 1.5, 200, 28, '')
+        self.email_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start + 2 * input_spacing * 1.5, 200, 28, "") if is_register else None
+
+        # Adjust button positions accordingly
+        button_y = input_y_start + 3 * input_spacing + 50
+        self.submit_button = ui.Button(screen, Config.width // 2, button_y + 30, 100, 60, "Register" if is_register else "Login")
+        self.cancel_button = ui.Button(screen, Config.width // 2, button_y + 100 , 100, 60, "Cancel")
+
+        # Labels
+        self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 28)
+        self.username_label = self.font.render("Username:", True, (0, 0, 0))
+        self.password_label = self.font.render("Password:", True, (0, 0, 0))
+        self.email_label = self.font.render("Email:", True, (0, 0, 0)) if is_register else None
+
+    def handle_events(self, event):
+        self.username_input.handle_event(event)
+        self.password_input.handle_event(event)
+        if self.is_register and self.email_input:
+            self.email_input.handle_event(event)
+
+        if event.type == pygame.MOUSEBUTTONUP:
+            if event.button == 1:
+                if self.submit_button.get_rect().collidepoint(event.pos):
+                    sounds.button_sound.play()
+                    if self.is_register:
+                        if self.email_input:
+                            return (self.username_input.text, self.password_input.text, self.email_input.text)
+                        else:
+                            print("Error: Email input is missing in register mode")
+                            return None
+                    else:
+                        return (self.username_input.text, self.password_input.text)
+                elif self.cancel_button.get_rect().collidepoint(event.pos):
+                    sounds.button_sound.play()
+                    return 'cancel'
+
+    def draw(self):
+        self.screen.blit(self.background, (0, 0))
+
+        # Draw labels above the input boxes
+        self.screen.blit(self.username_label, (Config.width // 2 - 110, self.username_input.rect.y - 30))
+        self.screen.blit(self.password_label, (Config.width // 2 - 110, self.password_input.rect.y - 30))
+        if self.is_register and self.email_input:
+            self.screen.blit(self.email_label, (Config.width // 2 - 110, self.email_input.rect.y - 30))
+
+        self.username_input.draw()
+        self.password_input.draw()
+        if self.is_register and self.email_input:
+            self.email_input.draw()
+        self.submit_button.Draw()
+        self.cancel_button.Draw()
+
+    def run(self):
+        running = True
+        while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    done = True
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if input_box.collidepoint(event.pos):
-                        active = not active
-                    else:
-                        active = False
-                if event.type == pygame.KEYDOWN:
-                    if active:
-                        if event.key == pygame.K_RETURN:
-                            return text
-                        elif event.key == pygame.K_BACKSPACE:
-                            text = text[:-1]
-                        else:
-                            text += event.unicode
+                    return None
+                result = self.handle_events(event)
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_ESCAPE:
+                        return 'main'
+                if result:
+                    if result == 'cancel':
+                        return 'main'
+                    return result
 
-            self.screen.fill((30, 30, 30))
-            txt_surface = self.font.render(prompt + text, True, (255, 255, 255))
-            width = max(200, txt_surface.get_width()+10)
-            input_box.w = width
-            self.screen.blit(txt_surface, (input_box.x+5, input_box.y+5))
-            pygame.draw.rect(self.screen, (255, 255, 255), input_box, 2)
+            self.screen.blit(self.background, (0, 0))
+            self.draw()
 
             pygame.display.flip()
-            self.clock.tick(30)
-
-    def register(self):
-        username = self.get_input('Enter username: ')
-        password = self.get_input('Enter password: ')
-        email = self.get_input('Enter email: ')
-
-        data = {
-            'username': username,
-            'password': password,
-            'email': email
-        }
-        response = requests.post('http://127.0.0.1:8000/auth/register/', data=json.dumps(data))
-        if response.json().get('status') == 'success':
-            print('Registration successful')
-        else:
-            print('Registration failed:', response.json().get('message'))
-
-    def login(self):
-        username = self.get_input('Enter username: ')
-        password = self.get_input('Enter password: ')
-
-        data = {
-            'username': username,
-            'password': password
-        }
-        response = requests.post('http://127.0.0.1:8000/auth/login/', data=json.dumps(data))
-        if response.json().get('status') == 'success':
-            print('Login successful')
-        else:
-            print('Login failed:', response.json().get('message'))

@@ -109,7 +109,8 @@ class Button:
 
 
 class InputBox:
-    def __init__(self, x, y, w, h, text=''):
+    def __init__(self, screen, x, y, w, h, text=''):
+        self.screen = screen
         self.rect = pygame.Rect(x, y, w, h)
         self.color = pygame.Color('lightskyblue3')
         self.text = text
@@ -135,6 +136,6 @@ class InputBox:
                     self.text += event.unicode
                 self.txt_surface = self.font.render(self.text, True, self.color)
 
-    def draw(self, screen):
-        screen.blit(self.txt_surface, (self.rect.x+5, self.rect.y+5))
-        pygame.draw.rect(screen, self.color, self.rect, 2)
+    def draw(self):
+        self.screen.blit(self.txt_surface, (self.rect.x+5, self.rect.y+5))
+        pygame.draw.rect(self.screen, self.color, self.rect, 2)

@@ -1,5 +1,6 @@
 import pygame, os
 import ui
+import requests
 from setting import Config,sounds
 from MainScreen.chess import Chess
 from MainScreen.fadeeffect import fade_in,fade_out
@@ -30,12 +31,17 @@ class Menu:
         self.load = ui.Button(screen, Config.width // 2, button_y_start +  button_spacing, 200, 80, "Load Game")
         self.Option = ui.Button(screen, Config.width // 2, button_y_start + 2 *  button_spacing, 200, 80, "Option")
         self.exit = ui.Button(screen, Config.width // 2, button_y_start + 3 * button_spacing, 200, 80, "Exit")
-        self.log_button = ui.Button(screen, Config.width // 2 + 640, button_y_start + 3.7 * button_spacing, 120, 60, "Log In")
+        self.log_button = ui.Button(screen, Config.width // 2 + 640, button_y_start + 3 * button_spacing, 60, 60, "Log In")
+        self.register_button = ui.Button(screen, Config.width // 2 + 640, button_y_start + 3.7 * button_spacing, 120, 60, "Register")
 
         self.running = True
         self.clock = pygame.time.Clock()
         self.chess = Chess(screen)
         self.sakura_background = Background(screen)
+        self.login_screen = None
+        self.register_screen = None
+        self.logged_in_user = None
+        self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
 
     def DrawButtons(self):
         self.Play.Draw()
@@ -43,6 +49,42 @@ class Menu:
         self.exit.Draw()
         self.load.Draw()
         self.log_button.Draw()
+        self.register_button.Draw()
+
+    def register_user(self, username, password, email):
+        url = "http://localhost:8000/authentication/register/"
+        data = {
+            "username": username,
+            "password": password,
+            "email": email
+        }
+        try:
+            response = requests.post(url, json=data)
+            return response.json()
+        except requests.RequestException:
+            return {"status": "error", "message": "Network error"}
+
+    def login_user(self, username, password):
+        url = "http://localhost:8000/authentication/login/"
+        data = {
+            "username": username,
+            "password": password
+        }
+        try:
+            response = requests.post(url, json=data)
+            result = response.json()
+            if result['status'] == 'success':
+                self.logged_in_user = username
+            return result
+        except requests.RequestException:
+            return {"status": "error", "message": "Network error"}
+
+    def draw_username(self):
+        if self.logged_in_user:
+            text_surface = self.font.render(f"Player : {self.logged_in_user}", True, (255, 255, 255))
+            text_rect = text_surface.get_rect()
+            text_rect.topright = (Config.width - 40, 30)  # 10 pixels from the top right corner
+            self.screen.blit(text_surface, text_rect)
 
     def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
@@ -51,24 +93,37 @@ class Menu:
             fade_out(screen)
             fade_in(screen)
             return'play'
+
         elif self.load.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
             fade_in(screen)
             return'load'
+
         elif self.Option.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
             fade_in(screen)
             return'option'
+
         elif self.exit.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             self.running = False
             fade_out(screen)
+
         elif self.log_button.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
+            fade_out(screen)
             self.login_screen = LoginScreen(screen)
+            fade_in(screen)
             return 'login'
+
+        elif self.register_button.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            fade_out(screen)
+            self.register_screen = LoginScreen(screen, is_register=True)
+            fade_in(screen)
+            return 'register'
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -88,15 +143,48 @@ class Menu:
                     if event.button == 1:
                         next_screen = self.HandleClick(self.screen)
                         if next_screen:
-                            return next_screen
+                            if next_screen == 'login':
+                                self.login_screen = LoginScreen(self.screen)
+                            elif next_screen == 'register':
+                                self.register_screen = LoginScreen(self.screen, is_register=True)
+                            else:
+                                return next_screen
+
+            # Handle login screen
+            if self.login_screen:
+                result = self.login_screen.run()
+                if result:
+                    if result != 'cancel':
+                        if len(result) == 2:
+                            username, password = result
+                            login_result = self.login_user(username, password)
+                            print(login_result['message'])
+                        else:
+                            print("Unexpected result from login screen")
+                    self.login_screen = None
+
+            # Handle register screen
+            if self.register_screen:
+                result = self.register_screen.run()
+                if result:
+                    if result != 'cancel':
+                        if len(result) == 3:
+                            username, password, email = result
+                            register_result = self.register_user(username, password, email)
+                            print(register_result['message'])
+                        else:
+                            print("Unexpected result from register screen")
+                    self.register_screen = None
 
             # display background image
-
             self.screen.blit(self.background, (0, 0))
+
             # for logo
             self.sakura_background.draw()
             self.screen.blit(self.title_image, self.title_image_rect.topleft)
-            self.DrawButtons()
 
+            # Draw buttons
+            self.DrawButtons()
+            self.draw_username()
             # update screen
             pygame.display.update()

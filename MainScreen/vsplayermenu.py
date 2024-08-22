@@ -43,21 +43,17 @@ class VsplayerMenu:
         elif self.classic.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             pygame.mixer.music.stop()
-            fade_out(screen)
             self.chess.gameOver = False
             chess = Chess(screen, time_control={"initial": 10, "increment": 0})
             self.screen.blit(self.background, (0, 0))
             chess.vsPlayer()
-            fade_in(screen)
         elif self.blitz.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             pygame.mixer.music.stop()
-            fade_out(screen)
             self.chess.gameOver = False
             chess = Chess(screen, time_control={"initial": 5, "increment": 0})
             self.screen.blit(self.background, (0, 0))
             chess.vsPlayer()
-            fade_in(screen)
         elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
