@@ -41,3 +41,20 @@ def login(request):
             return JsonResponse({'status': 'error', 'message': 'User not found'})
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+@csrf_exempt
+def update_points(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        points = data.get('points')
+
+        try:
+            user = User.objects.get(username=username)
+            user.points += points
+            user.save()
+            return JsonResponse({'status': 'success', 'message': 'Points updated successfully', 'total_points': user.points})
+        except User.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'User not found'})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

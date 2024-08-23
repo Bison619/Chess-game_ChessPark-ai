@@ -14,9 +14,9 @@ class LoginScreen:
         input_y_start = Config.height // 2 - 75
         input_spacing = 50
 
-        self.username_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start, 200, 28, "")
-        self.password_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start + input_spacing * 1.5, 200, 28, '')
-        self.email_input = ui.InputBox(screen, Config.width // 2 - 100, input_y_start + 2 * input_spacing * 1.5, 200, 28, "") if is_register else None
+        self.username_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start, 250, 35, "")
+        self.password_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start + input_spacing * 1.5, 250, 35, '')
+        self.email_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start + 2 * input_spacing * 1.5, 250, 35, "") if is_register else None
 
         # Adjust button positions accordingly
         button_y = input_y_start + 3 * input_spacing + 50
@@ -24,7 +24,7 @@ class LoginScreen:
         self.cancel_button = ui.Button(screen, Config.width // 2, button_y + 100 , 100, 60, "Cancel")
 
         # Labels
-        self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 28)
+        self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 26)
         self.username_label = self.font.render("Username:", True, (0, 0, 0))
         self.password_label = self.font.render("Password:", True, (0, 0, 0))
         self.email_label = self.font.render("Email:", True, (0, 0, 0)) if is_register else None

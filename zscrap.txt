@@ -1,0 +1,19 @@
+    def show_login_message(self):
+        message = "Please log in to access the Bots Menu"
+        font = pygame.font.Font(None, 36)
+        text = font.render(message, True, (255, 0, 0))  # Red text
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
+
+        elif self.vs_bot.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            if self.logged_in_user:  # Check if a user is logged in
+                fade_out(screen)
+                fade_in(screen)
+                return 'bots', self.logged_in_user  # Return both the next screen and the logged-in user
+            else:
+                # Show a message that the user needs to log in
+                self.show_login_message()
+                return 'main
