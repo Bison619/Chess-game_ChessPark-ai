@@ -14,6 +14,8 @@ pygame.mixer.music.play(-1)
 
 
 class Menu:
+    logged_in_user = None
+    is_logged_in = False
     def __init__(self, screen):
         self.screen = screen
         self.background = pygame.image.load("./assets/images/mainbg2.png")
@@ -42,8 +44,6 @@ class Menu:
         self.sakura_background = Background(screen)
         self.login_screen = None
         self.register_screen = None
-        self.logged_in_user = None
-        self.is_logged_in = False
         self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
 
     def DrawButtons(self):
@@ -51,10 +51,10 @@ class Menu:
         self.Option.Draw()
         self.exit.Draw()
         self.load.Draw()
-        if not self.is_logged_in:
+        if Menu.is_logged_in != True:
             self.log_button.Draw()
             self.register_button.Draw()
-        if  self.is_logged_in:
+        if  Menu.is_logged_in == True:
             self.logout_button.Draw()
 
     def register_user(self, username, password, email):
@@ -82,8 +82,8 @@ class Menu:
             response = requests.post(url, json=data)
             result = response.json()
             if result['status'] == 'success':
-                self.logged_in_user = username
-                self.is_logged_in = True
+                Menu.logged_in_user = username
+                Menu.is_logged_in = True
                 self.show_login_message()
             return result
         except requests.RequestException:
@@ -91,21 +91,21 @@ class Menu:
             return {"status": "error", "message": "Network error"}
 
     def draw_username(self):
-        if self.is_logged_in and self.logged_in_user:
-            text_surface = self.font.render(f"Player : {self.logged_in_user}", True, (255, 255, 255))
+        if Menu.is_logged_in and Menu.logged_in_user:
+            text_surface = self.font.render(f"Player : {Menu.logged_in_user}", True, (255, 255, 255))
             text_rect = text_surface.get_rect()
             text_rect.topright = (Config.width - 40, 30)
             self.screen.blit(text_surface, text_rect)
             self.logout_button.Draw()
 
     def logout(self):
-        self.logged_in_user = None
-        self.is_logged_in = False
+        Menu.logged_in_user = None
+        Menu.is_logged_in = False
 
     def show_login_message(self):
         self.screen.blit(self.backgroundblur, (0, 0))
         message = "You are Logged In..!! "
-        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 100)
         text = font.render(message, True, (0, 255, 0))
         text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
         self.screen.blit(text, text_rect)
@@ -115,7 +115,7 @@ class Menu:
     def show_loginerror_message(self):
         self.screen.blit(self.backgroundblur, (0, 0))
         message = "Unexpected Error Try again..!! "
-        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 100)
         text = font.render(message, True, (255, 0, 0))
         text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
         self.screen.blit(text, text_rect)
@@ -125,7 +125,7 @@ class Menu:
     def show_register_message(self):
         self.screen.blit(self.backgroundblur, (0, 0))
         message = "You are Registerd ..!! "
-        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 100)
         text = font.render(message, True, (0, 255, 0))
         text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
         self.screen.blit(text, text_rect)
@@ -171,7 +171,7 @@ class Menu:
             fade_in(screen)
             return 'register'
 
-        elif self.is_logged_in and self.logout_button.get_rect().collidepoint(mouse_position):
+        elif Menu.is_logged_in and self.logout_button.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             self.logout()
             return 'main'

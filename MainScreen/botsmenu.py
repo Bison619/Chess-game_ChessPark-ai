@@ -5,6 +5,7 @@ from ui import TextUI, Text2UI
 from board import Board
 import ui
 from MainScreen.chess import Chess
+from MainScreen.menu import Menu
 
 class BotsMenu:
     def __init__(self, screen):
@@ -73,6 +74,14 @@ class BotsMenu:
             self.bot_texts[i].Draw()
         self.back_button.Draw()
 
+    def draw_username(self):
+        if Menu.is_logged_in and Menu.logged_in_user:
+            font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
+            text_surface = font.render(f"Player : {Menu.logged_in_user}", True, (255, 255, 255))
+            text_rect = text_surface.get_rect()
+            text_rect.topright = (Config.width - 40, 30)
+            self.screen.blit(text_surface, text_rect)
+
     def HandleClick(self, screen):
         mouse_position = pygame.mouse.get_pos()
         if self.back_button.get_rect().collidepoint(mouse_position):
@@ -120,5 +129,6 @@ class BotsMenu:
 
             self.screen.blit(self.background, (0, 0))
             self.DrawButtons()
+            self.draw_username()
             pygame.display.update()
 

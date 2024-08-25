@@ -3,6 +3,7 @@ import ui
 from setting import Config,sounds
 from MainScreen.chess import Chess
 from MainScreen.fadeeffect import fade_out,fade_in
+from MainScreen.menu import Menu
 
 class PlayMenu:
     def __init__(self, screen):
@@ -48,6 +49,14 @@ class PlayMenu:
             fade_out(screen)
             return 'main'
 
+    def draw_username(self):
+        if Menu.is_logged_in and Menu.logged_in_user:
+            font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
+            text_surface = font.render(f"Player : {Menu.logged_in_user}", True, (255, 255, 255))
+            text_rect = text_surface.get_rect()
+            text_rect.topright = (Config.width - 40, 30)
+            self.screen.blit(text_surface, text_rect)
+
     def GetFrameRate(self):
         return self.clock.get_fps()
 
@@ -73,4 +82,5 @@ class PlayMenu:
             self.screen.blit(self.background, (0, 0))
             self.screen.blit(self.title_image, self.title_image_rect.topleft)
             self.DrawButtons()
+            self.draw_username()
             pygame.display.update()

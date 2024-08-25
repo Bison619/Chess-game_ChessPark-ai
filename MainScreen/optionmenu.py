@@ -17,7 +17,7 @@ class OptionMenu:
         button_y_start = Config.height // 2 -20
         button_spacing = 110
         self.option1 = ui.Button(screen, Config.width // 2, button_y_start, 300, 80, "Leaderboard")
-        self.option2 = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "option2")
+        self.option2 = ui.Button(screen, Config.width // 2, button_y_start + button_spacing, 300, 80, "Rules")
         self.back = ui.Button(screen, Config.width // 2, button_y_start + 2 * button_spacing, 300, 80, "Back")
 
         self.running = True
@@ -35,6 +35,13 @@ class OptionMenu:
             fade_out(screen)
             fade_in(screen)
             return'leaderboard'
+
+        if self.option2.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            fade_out(screen)
+            fade_in(screen)
+            pass
+
         elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
             fade_out(screen)
