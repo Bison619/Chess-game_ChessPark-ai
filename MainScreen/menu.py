@@ -17,6 +17,7 @@ class Menu:
     def __init__(self, screen):
         self.screen = screen
         self.background = pygame.image.load("./assets/images/mainbg2.png")
+        self.backgroundblur = pygame.image.load("./assets/images/mainbg2blur.png")
         self.background = pygame.transform.smoothscale(self.background, Config.resolution)
         self.login_screen = None
         # for logo
@@ -33,6 +34,7 @@ class Menu:
         self.exit = ui.Button(screen, Config.width // 2, button_y_start + 3 * button_spacing, 200, 80, "Exit")
         self.log_button = ui.Button(screen, Config.width // 2 + 640, button_y_start + 3 * button_spacing, 60, 60, "Log In")
         self.register_button = ui.Button(screen, Config.width // 2 + 640, button_y_start + 3.7 * button_spacing, 120, 60, "Register")
+        self.logout_button = ui.Button(screen, Config.width // 2 - 640, button_y_start + 3.7 * button_spacing, 120, 60, "Logout")
 
         self.running = True
         self.clock = pygame.time.Clock()
@@ -41,6 +43,7 @@ class Menu:
         self.login_screen = None
         self.register_screen = None
         self.logged_in_user = None
+        self.is_logged_in = False
         self.font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
 
     def DrawButtons(self):
@@ -48,8 +51,11 @@ class Menu:
         self.Option.Draw()
         self.exit.Draw()
         self.load.Draw()
-        self.log_button.Draw()
-        self.register_button.Draw()
+        if not self.is_logged_in:
+            self.log_button.Draw()
+            self.register_button.Draw()
+        if  self.is_logged_in:
+            self.logout_button.Draw()
 
     def register_user(self, username, password, email):
         url = "http://localhost:8000/authentication/register/"
@@ -60,8 +66,10 @@ class Menu:
         }
         try:
             response = requests.post(url, json=data)
+            self.show_register_message()
             return response.json()
         except requests.RequestException:
+            self.show_loginerror_message()
             return {"status": "error", "message": "Network error"}
 
     def login_user(self, username, password):
@@ -75,16 +83,54 @@ class Menu:
             result = response.json()
             if result['status'] == 'success':
                 self.logged_in_user = username
+                self.is_logged_in = True
+                self.show_login_message()
             return result
         except requests.RequestException:
+            self.show_loginerror_message()
             return {"status": "error", "message": "Network error"}
 
     def draw_username(self):
-        if self.logged_in_user:
+        if self.is_logged_in and self.logged_in_user:
             text_surface = self.font.render(f"Player : {self.logged_in_user}", True, (255, 255, 255))
             text_rect = text_surface.get_rect()
-            text_rect.topright = (Config.width - 40, 30)  # 10 pixels from the top right corner
+            text_rect.topright = (Config.width - 40, 30)
             self.screen.blit(text_surface, text_rect)
+            self.logout_button.Draw()
+
+    def logout(self):
+        self.logged_in_user = None
+        self.is_logged_in = False
+
+    def show_login_message(self):
+        self.screen.blit(self.backgroundblur, (0, 0))
+        message = "You are Logged In..!! "
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        text = font.render(message, True, (0, 255, 0))
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
+
+    def show_loginerror_message(self):
+        self.screen.blit(self.backgroundblur, (0, 0))
+        message = "Unexpected Error Try again..!! "
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        text = font.render(message, True, (255, 0, 0))
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
+
+    def show_register_message(self):
+        self.screen.blit(self.backgroundblur, (0, 0))
+        message = "You are Registerd ..!! "
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 64)
+        text = font.render(message, True, (0, 255, 0))
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
 
     def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
@@ -124,6 +170,11 @@ class Menu:
             self.register_screen = LoginScreen(screen, is_register=True)
             fade_in(screen)
             return 'register'
+
+        elif self.is_logged_in and self.logout_button.get_rect().collidepoint(mouse_position):
+            sounds.button_sound.play()
+            self.logout()
+            return 'main'
 
     def GetFrameRate(self):
         return self.clock.get_fps()
@@ -184,7 +235,8 @@ class Menu:
             self.screen.blit(self.title_image, self.title_image_rect.topleft)
 
             # Draw buttons
-            self.DrawButtons()
             self.draw_username()
+            self.DrawButtons()
+
             # update screen
             pygame.display.update()
