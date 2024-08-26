@@ -75,7 +75,7 @@ class VsplayerMenu:
                     self.running = False
                 elif event.type == pygame.KEYUP:
                     if event.key == pygame.K_ESCAPE:
-                        self.running = False
+                        return 'main'
                 elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                     next_screen = self.HandleClick(self.screen)
                     if next_screen:

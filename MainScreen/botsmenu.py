@@ -45,12 +45,12 @@ class BotsMenu:
 
         # Text below boxes of the player and elo
         self.bot_texts = [
-            Text2UI(screen, "Name: Max\nELO: 600", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Alice\nELO: 700", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Bob\nELO: 800", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (0, 255, 0)),
-            Text2UI(screen, "Name: Mark Rober\nELO: 1000", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 0)),
-            Text2UI(screen, "Name: GothamChess\nELO: 1100", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 0)),
-            Text2UI(screen, "Name: Magnus Carlson\nELO: 1500", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 0, 0))
+            Text2UI(screen, "Name: Max\nPoints: 600", self.box_positions[0][0], self.box_positions[0][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Alice\nPoints: 700", self.box_positions[1][0], self.box_positions[1][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Bob\nPoints: 800", self.box_positions[2][0], self.box_positions[2][1] + 140, 16, (0, 255, 0)),
+            Text2UI(screen, "Name: Mark Rober\nPoints: 1000", self.box_positions[3][0], self.box_positions[3][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: GothamChess\nPoints: 1100", self.box_positions[4][0], self.box_positions[4][1] + 140, 16, (255, 255, 0)),
+            Text2UI(screen, "Name: Magnus Carlson\nPoints: 1500", self.box_positions[5][0], self.box_positions[5][1] + 140, 16, (255, 0, 0))
         ]
 
         button_y_start = Config.height // 2 - 20
@@ -60,6 +60,7 @@ class BotsMenu:
         self.running = True
         self.clock = pygame.time.Clock()
         self.chess = None
+        self.bot_points = [600, 700, 800, 1000, 1100, 1500]
 
 
     def DrawButtons(self):
@@ -105,7 +106,7 @@ class BotsMenu:
         }
         depth = depth_mapping.get(index, 1)
         print(f"AI Depth: {depth}")
-        self.chess = Chess(self.screen, ai_depth=depth)
+        self.chess = Chess(self.screen, ai_depth=depth, bot_points=self.bot_points[index])
     # Set the background to mainbg
         sounds.button_sound.play()
         self.chess.vsComputer()
@@ -121,7 +122,7 @@ class BotsMenu:
                     self.running = False
                 elif event.type == pygame.KEYUP:
                     if event.key == pygame.K_ESCAPE:
-                        self.running = False
+                        return 'main'
                 elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                     next_screen = self.HandleClick(self.screen)
                     if next_screen:

@@ -2,6 +2,7 @@ import pygame
 import ui
 from setting import Config,sounds
 from MainScreen.fadeeffect import fade_out,fade_in
+from MainScreen.menu import Menu
 
 class OptionMenu:
     def __init__(self, screen):
@@ -27,6 +28,14 @@ class OptionMenu:
         self.option1.Draw()
         self.option2.Draw()
         self.back.Draw()
+
+    def draw_username(self):
+        if Menu.is_logged_in and Menu.logged_in_user:
+            font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 32)
+            text_surface = font.render(f"Player : {Menu.logged_in_user}", True, (255, 255, 255))
+            text_rect = text_surface.get_rect()
+            text_rect.topright = (Config.width - 40, 30)
+            self.screen.blit(text_surface, text_rect)
 
     def HandleClick(self,screen):
         mouse_position = pygame.mouse.get_pos()
@@ -55,7 +64,7 @@ class OptionMenu:
                     self.running = False
                 elif event.type == pygame.KEYUP:
                     if event.key == pygame.K_ESCAPE:
-                        self.running = False
+                        return 'main'
                 elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                     next_screen = self.HandleClick(self.screen)
                     if next_screen:
@@ -64,4 +73,5 @@ class OptionMenu:
             self.screen.blit(self.background, (0, 0))
             self.screen.blit(self.title_image, self.title_image_rect.topleft)
             self.DrawButtons()
+            self.draw_username()
             pygame.display.update()

@@ -10,9 +10,11 @@ from utils import GetSprite, bh, oh, ch ,rh
 from board import Board
 import ui
 from AI.ChessAI import Minimax
+import requests
+
 
 class Chess:
-    def __init__(self, screen, ai_depth=1, time_control=None):
+    def __init__(self, screen, ai_depth=1, time_control=None, bot_points=0):
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.board = Board()
@@ -37,6 +39,8 @@ class Chess:
         self.player_turn = 0
         self.current_save_slot = 1
         self.placeholder_player_turn = self.player_turn
+        self.bot_points = bot_points
+        self.player_username = None
 
         # for button
         button_y_start = Config.height // 2 - 60
@@ -217,6 +221,9 @@ class Chess:
             self.display()
             self.gameOverWindow()
 
+
+
+
     def ReleasePiece(self):
         self.selectedPiece = None
         self.selectedPieceMoves = None
@@ -235,6 +242,7 @@ class Chess:
         self.Save.Draw()
         self.Resign.Draw()
         self.drawTimer()
+        self.draw_username()
 
     def DrawChessBoard(self):
         if self.animateSpot < Config.spotSize:
@@ -485,6 +493,16 @@ class Chess:
                 return True
         return False
 
+    def draw_username(self):
+        from MainScreen.menu import Menu
+        if Menu.is_logged_in and Menu.logged_in_user:
+            font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 46)
+            text_surface = font.render(f"Bot Vs {Menu.logged_in_user}", True, (255, 0, 0))
+            text_rect = text_surface.get_rect()
+            text_rect.midleft = (60, Config.height // 2)
+            self.screen.blit(text_surface, text_rect)
+            self.player_username = Menu.logged_in_user
+
     def drawTimer(self):
         if self.time_control:
             white_time_str = time.strftime("%M:%S", time.gmtime(max(0, self.white_time)))
@@ -531,6 +549,24 @@ class Chess:
             self.screen.blit(black_timer, black_timer_center)
             self.screen.blit(white_timer, white_timer_center)
 
+    def update_player_points(self, points):
+        if not self.player_username:
+            return
+
+        url = "http://localhost:8000/authentication/update_points/"
+        data = {
+            "username": self.player_username,
+            "points": points
+        }
+        try:
+            response = requests.post(url, json=data)
+            result = response.json()
+            if result['status'] == 'success':
+                print(f"Points updated for {self.player_username}. Total points: {result['total_points']}")
+            else:
+                print(f"Failed to update points: {result['message']}")
+        except requests.RequestException as e:
+            print(f"Network error while updating points: {str(e)}")
 
     def gameOverWindow(self):
         if self.board.winner >= 0:
@@ -541,6 +577,8 @@ class Chess:
         self.screen.blit(self.gameOverBackground, (0, 0))
         self.gameOverHeader.Draw()
         if self.board.winner  == 0:
+            if self.player_username:  # If we have a username, update points
+                    self.update_player_points(self.bot_points)
             self.winnerText.text = "White Won"
 
             king_image = self.board.WhiteKing.sprite
