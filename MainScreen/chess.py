@@ -191,14 +191,10 @@ class Chess:
         if self.board.pieceToPromote != None and self.AdjustedMouse.x == self.board.pieceToPromote.position.x:
             choice = self.AdjustedMouse.y
             if choice <= 3 and self.board.player == 0:
-                # promote pawn
                 self.board.PromotePawn(self.board.pieceToPromote, choice)
-                # refresh screen
                 self.display()
             elif choice > 3 and self.board.player == 1:
-                # promote pawn
                 self.board.PromotePawn(self.board.pieceToPromote, 7-choice)
-                # refresh screen
                 self.display()
         else:
             if OnBoard(self.AdjustedMouse):
@@ -220,9 +216,6 @@ class Chess:
             # print("the game is over")
             self.display()
             self.gameOverWindow()
-
-
-
 
     def ReleasePiece(self):
         self.selectedPiece = None
@@ -297,7 +290,7 @@ class Chess:
                     sprite = GetSprite(piece)
                     self.screen.blit(sprite, (x_pos, y_pos))
                 elif self.board.grid[x][y] is not None:
-                    y_pos += Config.spotSize // 2  # Adjust y_pos only if there is no piece
+                    y_pos += Config.spotSize // 2
                     self.screen.blit(self.board.grid[x][y].sprite, (x_pos, y_pos))
 
 
@@ -497,7 +490,7 @@ class Chess:
         from MainScreen.menu import Menu
         if Menu.is_logged_in and Menu.logged_in_user:
             font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 46)
-            text_surface = font.render(f"Bot Vs {Menu.logged_in_user}", True, (255, 0, 0))
+            text_surface = font.render(f"Bot:Vs:{Menu.logged_in_user}", True, (255, 0, 0))
             text_rect = text_surface.get_rect()
             text_rect.midleft = (60, Config.height // 2)
             self.screen.blit(text_surface, text_rect)
@@ -514,12 +507,12 @@ class Chess:
             black_timer = font.render(f"{black_time_str}", True,  (255, 255, 255))
             white_timer = font.render(f"{white_time_str}", True, (0, 0, 0))
 
-            # Get the width and height of the timer text to size the rectangles perfectly
+
             black_timer_rect = black_timer.get_rect()
             white_timer_rect = white_timer.get_rect()
 
             # Position the timers on the screen
-            timer_x = 80  # Horizontal position
+            timer_x = 80
             black_timer_y = Config.height // 3
             white_timer_y = (Config.height * 2) // 3
 
@@ -531,21 +524,18 @@ class Chess:
             white_rect_width = white_timer_rect.width + 20 + padding * 2
             white_rect_height = white_timer_rect.height + padding * 2
 
-            # Draw background rectangles for better visibility
             pygame.draw.rect(self.screen, (0, 0, 0),
                             (timer_x - padding, black_timer_y - black_rect_height // 2,
                             black_rect_width + 15, black_rect_height), border_radius=10)
             pygame.draw.rect(self.screen, (255, 255, 255),
                             (timer_x - padding, white_timer_y - white_rect_height // 2,
                             white_rect_width + 15, white_rect_height), border_radius=10)
-
-            # Center the timer text within the rectangles
             black_timer_center = (timer_x + black_rect_width // 2 - black_timer_rect.width // 2,
                                 black_timer_y - black_timer_rect.height // 2)
             white_timer_center = (timer_x + white_rect_width // 2 - white_timer_rect.width // 2,
                                 white_timer_y - white_timer_rect.height // 2)
 
-            # Blit timers to the screen
+            # for Blit the screen
             self.screen.blit(black_timer, black_timer_center)
             self.screen.blit(white_timer, white_timer_center)
 
@@ -577,7 +567,7 @@ class Chess:
         self.screen.blit(self.gameOverBackground, (0, 0))
         self.gameOverHeader.Draw()
         if self.board.winner  == 0:
-            if self.player_username:  # If we have a username, update points
+            if self.player_username:  # If we have a username or loggedin, update points
                     self.update_player_points(self.bot_points)
             self.winnerText.text = "White Won"
 

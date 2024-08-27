@@ -58,3 +58,14 @@ def update_points(request):
             return JsonResponse({'status': 'error', 'message': 'User not found'})
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+
+def get_leaderboard(request):
+    if request.method == 'GET':
+        users = User.objects.all().order_by('-points')[:8]  # Get top 8 users
+        leaderboard_data = [
+            {'username': user.username, 'points': user.points}
+            for user in users
+        ]
+        return JsonResponse(leaderboard_data, safe=False)
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

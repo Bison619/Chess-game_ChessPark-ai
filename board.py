@@ -67,30 +67,6 @@ class Board:
         self.winner = 1 if self.player == 0 else 0
         # self.DisplayWinner()
 
-    # def DisplayWinner(self):
-    #         if self.winner is not None:
-    #             sounds.button_sound.play()
-    #             self.screen.blit(self.gameOverBackground, (0, 0))
-    #             self.gameOverHeader.Draw()
-
-    #         if self.player == 0:
-    #                 self.winnerText.text = "Black wins by resignation!"
-    #                 king_image = self.board.WhiteKing.sprite
-    #                 scaled_king_image = pygame.transform.scale(king_image, (king_image.get_width() + 20, king_image.get_height() + 20))
-    #                 self.screen.blit(scaled_king_image, (Config.width // 2 - Config.spotSize // 2, Config.height // 3 - 50))
-    #         elif self.player == 1:
-    #                 self.winnerText.text = "White wins by resignation!"
-    #                 king_image = self.board.BlackKing.sprite
-    #                 scaled_king_image = pygame.transform.scale(king_image, (king_image.get_width() + 20, king_image.get_height() + 20))
-    #                 self.screen.blit(scaled_king_image, (Config.width // 2 - Config.spotSize // 2, Config.height // 3 - 50))
-
-    #         self.gameOverHeader.Draw()
-    #         self.winnerText.Draw()
-    #         pygame.display.update()
-    #         time.sleep(5)
-    #         self.board = Board()
-    #         self.animateSpot = 1
-
     def GetPiece(self, coord):
         return self.grid[coord.x][coord.y]
 

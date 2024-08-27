@@ -42,10 +42,5 @@ def FEN(positionstring):
         elif character == "/":
             col += 1
             row = 0
-    # This fen function does not take into account the player turn
-    # this Fen function is not complete
-    # usually a fen function take into consideration all the 6 field of FEN notation
-    # but for this we only need the first field for the position
     return boardGrid
 
-# FEN("")
