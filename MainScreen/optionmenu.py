@@ -49,7 +49,7 @@ class OptionMenu:
             sounds.button_sound.play()
             fade_out(screen)
             fade_in(screen)
-            pass
+            return'rule'
 
         elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()

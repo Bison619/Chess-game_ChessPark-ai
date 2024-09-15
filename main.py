@@ -8,6 +8,7 @@ from MainScreen.loadmenu import LoadMenu
 from MainScreen.botsmenu import BotsMenu
 from MainScreen.leaderboardmenu import LeaderboardMenu
 from MainScreen.vsplayermenu import VsplayerMenu
+from MainScreen.rules import RuleMenu
 
 def main():
     pygame.init()
@@ -29,6 +30,8 @@ def main():
             menu = OptionMenu(screen)
         elif current_screen == 'leaderboard':
             menu = LeaderboardMenu(screen)
+        elif current_screen == 'rule':
+            menu = RuleMenu(screen)
         else:
             break
 
