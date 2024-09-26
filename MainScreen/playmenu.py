@@ -40,9 +40,12 @@ class PlayMenu:
             return 'Vsplayer'
         elif self.vs_bot.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
-            fade_out(screen)
-            fade_in(screen)
-            return 'bots'
+            if not Menu.is_logged_in:
+                self.show_nologin_message()
+            else:
+                fade_out(screen)
+                fade_in(screen)
+                return 'bots'
 
         elif self.back.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
@@ -56,6 +59,16 @@ class PlayMenu:
             text_rect = text_surface.get_rect()
             text_rect.topright = (Config.width - 40, 30)
             self.screen.blit(text_surface, text_rect)
+
+    def show_nologin_message(self):
+        self.screen.blit(self.background, (0, 0))
+        message = "Please Log In to Access ..!! "
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 100)
+        text = font.render(message, True, (0, 255, 0))
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
 
     def GetFrameRate(self):
         return self.clock.get_fps()

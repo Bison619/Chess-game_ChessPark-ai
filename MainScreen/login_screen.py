@@ -15,7 +15,7 @@ class LoginScreen:
         input_spacing = 50
 
         self.username_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start, 250, 35, "")
-        self.password_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start + input_spacing * 1.5, 250, 35, '')
+        self.password_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start + input_spacing * 1.5, 250, 35, '', is_password=True)
         self.email_input = ui.InputBox(screen, Config.width // 2 - 110, input_y_start + 2 * input_spacing * 1.5, 250, 35, "") if is_register else None
 
         # Adjust button positions accordingly

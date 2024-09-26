@@ -41,9 +41,12 @@ class OptionMenu:
         mouse_position = pygame.mouse.get_pos()
         if self.option1.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
-            fade_out(screen)
-            fade_in(screen)
-            return'leaderboard'
+            if not Menu.is_logged_in:
+                self.show_nologin_message()
+            else:
+                fade_out(screen)
+                fade_in(screen)
+                return'leaderboard'
 
         if self.option2.get_rect().collidepoint(mouse_position):
             sounds.button_sound.play()
@@ -55,6 +58,16 @@ class OptionMenu:
             sounds.button_sound.play()
             fade_out(screen)
             return 'main'
+
+    def show_nologin_message(self):
+        self.screen.blit(self.background, (0, 0))
+        message = "Please Log In to Access ..!! "
+        font = pygame.font.Font('assets/font/KnightWarrior-w16n8.ttf', 100)
+        text = font.render(message, True, (0, 255, 0))
+        text_rect = text.get_rect(center=(Config.width // 2, Config.height // 2))
+        self.screen.blit(text, text_rect)
+        pygame.display.update()
+        pygame.time.wait(2000)
 
     def Run(self):
         while self.running:

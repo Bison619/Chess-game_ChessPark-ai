@@ -109,7 +109,7 @@ class Button:
 
 
 class InputBox:
-    def __init__(self, screen, x, y, w, h, text=''):
+    def __init__(self, screen, x, y, w, h, text='', is_password=False):
         self.screen = screen
         self.rect = pygame.Rect(x, y, w, h)
         self.color = pygame.Color('lightskyblue3')
@@ -117,6 +117,7 @@ class InputBox:
         self.font = pygame.font.Font(None, 32)
         self.txt_surface = self.font.render(text, True, self.color)
         self.active = False
+        self.is_password = is_password
 
     def handle_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -134,7 +135,14 @@ class InputBox:
                     self.text = self.text[:-1]
                 else:
                     self.text += event.unicode
-                self.txt_surface = self.font.render(self.text, True, self.color)
+                self.update_txt_surface()
+
+    def update_txt_surface(self):
+        if self.is_password:
+            display_text = '*' * len(self.text)
+        else:
+            display_text = self.text
+        self.txt_surface = self.font.render(display_text, True, self.color)
 
     def draw(self):
         self.screen.blit(self.txt_surface, (self.rect.x+5, self.rect.y+5))
